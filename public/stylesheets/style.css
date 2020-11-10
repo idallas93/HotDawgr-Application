@@ -35,7 +35,7 @@ form.login {
   background-size: 100% 100%;
 }
 .match {
-  background-color: #d6e48b;
+  background-image: url("picture.jpg");
 }
 .card-body {
   background-color: white;
@@ -60,7 +60,7 @@ form.login {
   bottom: 500px;
   padding: 50px;
 }
-=======
+
 .signup {
   display: block;
 }
@@ -70,5 +70,8 @@ form.login {
 }
 
 .signup3 {
+  display: none;
+}
+#save {
   display: none;
 }
