@@ -3,14 +3,15 @@ form.login {
   margin-top: 50px;
 }
 #catch {
-  color: white;
+  color: rgb(80, 16, 0);
   left: 0;
   line-height: 200px;
   margin-top: -100px;
   position: absolute;
   text-align: center;
-  top: 50%;
+  top: 40%;
   width: 100%;
+  font-weight: bold;
 }
 #catch-button {
   left: 900px;
@@ -26,4 +27,17 @@ form.login {
   background-image: url("picture.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.imageTest {
+  background-image: url("picture.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.match {
+  background-color: #d6e48b;
+}
+.card-body {
+  background-color: white;
+  margin-right: 15px;
 }
