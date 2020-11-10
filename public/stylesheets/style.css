@@ -2,3 +2,28 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+#catch {
+  color: white;
+  left: 0;
+  line-height: 200px;
+  margin-top: -100px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+}
+#catch-button {
+  left: 900px;
+  margin-top: -100px;
+  position: absolute;
+  text-align: center;
+  top: 65%;
+  width: 5%;
+  border-radius: 20%;
+}
+.image {
+  background-color: #cccccc;
+  background-image: url("picture.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
