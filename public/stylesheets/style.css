@@ -60,3 +60,15 @@ form.login {
   bottom: 500px;
   padding: 50px;
 }
+=======
+.signup {
+  display: block;
+}
+
+.signup2 {
+  display: none;
+}
+
+.signup3 {
+  display: none;
+}
