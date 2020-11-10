@@ -48,9 +48,7 @@ module.exports = function(sequelize, DataTypes) {
       len: [1]
     },
 
-    
-
-    plainText: {
+    bio: {
       type: DataTypes.STRING,
       allowNull: false,
       len: [1]

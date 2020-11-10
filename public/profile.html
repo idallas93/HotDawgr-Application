@@ -24,17 +24,17 @@
     ></script>
     <link href="stylesheets/style.css" rel="stylesheet" />
   </head>
-  <body>
+  <body class="match">
     <nav class="navbar navbar-dark bg-dark">
       <a class="navbar-brand" href="/match">Match more!</a>
       <a class="navbar-brand" href="/chat">Chat</a>
     </nav>
-    <div class="container">
+    <div class="container" style="background-color: white;">
       <form>
         <h1 style="text-align: center;">Profile</h1>
         <fieldset disabled>
           <div class="form-group">
-            <label for="exInputEmail1">Email address</label>
+            <label for="exInputEmail1">Email address:</label>
             <input
               type="email"
               class="form-control"
@@ -43,7 +43,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="exInputUsername">Username</label>
+            <label for="exInputUsername">Username:</label>
             <input
               type="username"
               class="form-control"
@@ -70,25 +70,7 @@
                 /> -->
           <!-- </div> -->
           <div class="form-group">
-            <label for="exInputPassword">Password</label>
-            <input
-              type="password"
-              class="form-control"
-              id="password-input"
-              placeholder="Password"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exInputPassword">Password</label>
-            <input
-              type="passwordConfirm"
-              class="form-control"
-              id="passwordConfirm-input"
-              placeholder="Confirm Password"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exInputDogType">What's your dog breed?</label>
+            <label for="exInputDogType">Dog breed:</label>
             <input
               type="dogType"
               class="form-control"
@@ -97,7 +79,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="gender">Gender of Dog?</label><br />
+            <label for="gender">Dog gender:</label><br />
             <input type="radio" name="gender" value="0" checked /> Male
             <input type="radio" name="gender" value="1" /> Female
             <input type="radio" name="gender" value="2" /> Non-Binary
@@ -108,7 +90,7 @@
             <input type="radio" name="dogFix" value="0" /> Not Fixed
           </div>
           <div class="form-group">
-            <label for="exInputDogName">What's your dog's name?</label>
+            <label for="exInputDogName">Dog name:</label>
             <input
               type="dogName"
               class="form-control"
@@ -117,7 +99,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="exInputDogAge">What's your dog's age?</label>
+            <label for="exInputDogAge">Dog age:</label>
             <input
               type="dogAge"
               class="form-control"
@@ -126,16 +108,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="exInputDogFur">What's your dog's color?</label>
-            <input
-              type="dogFur"
-              class="form-control"
-              id="dogFur-input"
-              placeholder="Does your color match your collar?"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exInputDogFur">What's your dog's color?</label>
+            <label for="exInputDogFur">Dog color:</label>
             <input
               type="dogFur"
               class="form-control"
@@ -145,7 +118,7 @@
           </div>
           <!-- NEED SLIDERS -->
           <div class="form-group">
-            <label for="typeDate">What are you looking for?</label><br />
+            <label for="typeDate">Currently seeking:</label><br />
             <input type="radio" name="typeDate" value="0" checked /> Play Date
             <input type="radio" name="typeDate" value="1" /> Breeding
             <input type="radio" name="typeDate" value="2" /> Make new friends
@@ -155,11 +128,11 @@
           <!-- DOG AGE SLIDER -->
           <div class="form-group">
             <label for="exInputBio"
-              >Tell us anything else you want us to know!</label
+              >About your dog</label
             >
             <textarea
               class="form-control"
-              id="bio"
+              id="dogBio"
               placeholder="Tell us more!"
             ></textarea>
             <button type="submit" class="btn btn-default" id="button-two-back">
@@ -176,7 +149,7 @@
             <input type="radio" name="genderHuman" value="2" /> Non-Binary
           </div>
           <div class="form-group">
-            <label for="exInputCity">What city are you from?</label>
+            <label for="exInputCity">Current City:</label>
             <input
               type="cityLocation"
               class="form-control"
@@ -185,7 +158,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="exInputHumanName">What's your name?</label>
+            <label for="exInputHumanName">Your name:</label>
             <input
               type="humanName"
               class="form-control"
@@ -194,7 +167,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="exInputHumanAge">What's your age?</label>
+            <label for="exInputHumanAge">Your age:</label>
             <input
               type="humanAge"
               class="form-control"
@@ -202,11 +175,11 @@
               placeholder="How old are you?"
             />
           </div>
-          <label for="exInputBio">Tell us about yourself!</label>
+          <label for="exInputBio">About you:</label>
           <textarea
             class="form-control"
-            id="bio"
-            placeholder="What makes you, you?"
+            id="humanBio"
+            placeholder=
           ></textarea>
         </fieldset>
         <button type="submit" class="btn btn-primary" id="edits">Edit</button>
