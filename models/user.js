@@ -18,9 +18,6 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   });
-  User.associate = db => {
-    User.hasMany(db.Dog);
-  };
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
   User.prototype.validPassword = function(password) {
     return bcrypt.compareSync(password, this.password);
@@ -34,5 +31,8 @@ module.exports = function(sequelize, DataTypes) {
       null
     );
   });
+  User.associate = db => {
+    User.hasMany(db.Dog);
+  };
   return User;
 };
