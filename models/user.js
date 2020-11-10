@@ -12,26 +12,6 @@ module.exports = function(sequelize, DataTypes) {
         isEmail: true
       }
     },
-    gender: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    city: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    age: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    bio: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     // The password cannot be null
     password: {
       type: DataTypes.STRING,
@@ -53,6 +33,9 @@ module.exports = function(sequelize, DataTypes) {
   });
   User.associate = db => {
     User.hasMany(db.Dog);
+  };
+  User.associate = db => {
+    User.hasOne(db.Dog);
   };
   return User;
 };
