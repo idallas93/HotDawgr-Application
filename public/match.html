@@ -36,14 +36,19 @@
         <a href="/chat">Chats</a>
       </button>
     </nav>
-    <div class="container">
+    <div class="container matchContainer">
       <div
         id="carouselExampleIndicators"
         class="carousel slide"
         data-ride="carousel"
       >
-        <div>
-          <div class="carousel-inner row">
+        <div class="row">
+          <div class="col-sm-1 text-left">
+            <button type="button" class="btn btn-danger btn-lg" id="nope">
+              RUFF ONE
+            </button>
+          </div>
+          <div class="carousel-inner col">
             <div class="carousel-item active">
               <img
                 src="https://www.bea.gov/system/files/500x400.png"
@@ -66,7 +71,7 @@
               />
             </div>
           </div>
-          <a
+          <!-- <a
             class="carousel-control-prev"
             href="#carouselExampleIndicators"
             role="button"
@@ -83,9 +88,15 @@
           >
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
-          </a>
+          </a> -->
+          <div class="col-sm-1">
+            <button type="button" class="btn btn-primary btn-lg" id="yes">
+              GOOD BOI
+            </button>
+          </div>
         </div>
       </div>
+
       <div class="card-body row">
         <h5 class="text-left" id="asn">
           Doggo name: Placeholder Age: 20 Gender: Here

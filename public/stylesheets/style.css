@@ -39,5 +39,24 @@ form.login {
 }
 .card-body {
   background-color: white;
-  margin-right: 15px;
+  margin-left: 117px;
+  margin-right: 117px;
+}
+
+.matchContainer {
+  max-width: 1400px;
+}
+#nope {
+  position: fixed;
+  /* margin-left: -150px; */
+  padding: 50px;
+  left: 50px;
+  bottom: 500px;
+}
+#yes {
+  position: fixed;
+  /* margin-left: 50px; */
+  right: 50px;
+  bottom: 500px;
+  padding: 50px;
 }
