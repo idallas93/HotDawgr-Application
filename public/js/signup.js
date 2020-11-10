@@ -48,10 +48,10 @@ $(document).ready(() => {
     $(".signup2").show();
   })
 
-  // $("button-one").click(function (event) {
-  //   event.preventDefault();
-  //   console.log("is this working");
-  //   $(".signup").addClass("hide");
-  //   $(".signup2").removeClass("hide");
-  // })
+  $("#button-two-next").click(function (event) {
+    event.preventDefault();
+    console.log("is this working");
+    $(".signup2").hide();
+    $(".signup3").show();
+  })
 });
