@@ -28,12 +28,6 @@ form.login {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-.imageTest {
-  background-image: url("picture.jpg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
 .match {
   background-image: url("picture.jpg");
 }
