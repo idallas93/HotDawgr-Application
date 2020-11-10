@@ -26,7 +26,7 @@ module.exports = function(sequelize, DataTypes) {
 
     humanName: {
       type: DataTypes.STRING,
-      allowNull: fakse,
+      allowNull: false,
       len: [1]
 
     },
