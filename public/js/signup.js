@@ -54,4 +54,17 @@ $(document).ready(() => {
     $(".signup2").hide();
     $(".signup3").show();
   })
+
+  $("#button-two-back").click(function (event) {
+    event.preventDefault();
+    console.log("is this working");
+    $(".signup2").hide();
+    $(".signup").show();
+  })
+  $("#button-three-back").click(function (event) {
+    event.preventDefault();
+    console.log("is this working");
+    $(".signup3").hide();
+    $(".signup2").show();
+  })
 });
