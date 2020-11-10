@@ -50,4 +50,67 @@ module.exports = function(app) {
       });
     }
   });
+
+  // get route for getting all of the dogs
+  app.get("/api/dogs/", (_req, res) => {
+    db.Dog.findAll({}).then(dbDog => {
+      res.json(dbDog);
+    });
+  });
+  // get route for returning certain types of dogs
+  app.get("/api/dogs/breed/:breed", (req, res) => {
+    db.Dog.findAll({
+      where: {
+        category: req.params.dogType
+      }
+    }).then(dbDog => {
+      res.json(dbDog);
+    });
+  });
+  // get route for retrieving a single dog
+  app.get("/api/dogs/:id", (req, res) => {
+    db.Dog.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(dbDog => {
+      res.json(dbDog);
+    });
+  });
+  // post route for saving a new dog
+  app.post("/api/dogs", (req, res) => {
+    console.log("dog object", req.body);
+    db.Dog.create({
+      breed: req.body.breed,
+      gender: req.body.gender,
+      fixed: req.body.fixed,
+      name: req.body.name,
+      age: req.body.age,
+      color: req.body.color,
+      reason: req.body.reason,
+      plainText: req.body.plainText
+    }).then(dbDog => {
+      res.json(dbDog);
+    });
+  });
+  // delete route for deleting dogs
+  app.delete("/api/dogs/:id", (req, res) => {
+    db.Dog.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(dbPost => {
+      res.json(dbPost);
+    });
+  });
+  // PUT route for updating dogs
+  app.put("/api/dogs", (req, res) => {
+    db.Dog.update(req.body, {
+      where: {
+        id: req.body.id
+      }
+    }).then(dbDog => {
+      res.json(dbDog);
+    });
+  });
 };
