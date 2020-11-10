@@ -8,12 +8,12 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     gender: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       len: [1]
     },
     fixed: {
-      type: DataTypes.STRING,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
       len: [1]
     },
@@ -32,7 +32,7 @@ module.exports = function(sequelize, DataTypes) {
     },
 
     age: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       len: [1]
     },
@@ -43,7 +43,7 @@ module.exports = function(sequelize, DataTypes) {
     },
 
     reason: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       len: [1]
     },
