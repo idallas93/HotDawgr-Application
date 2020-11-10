@@ -24,13 +24,6 @@ module.exports = function(sequelize, DataTypes) {
       len: [1]
     },
 
-    humanName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      len: [1]
-
-    },
-
     age: {
       type: DataTypes.INTEGER,
       allowNull: false,
