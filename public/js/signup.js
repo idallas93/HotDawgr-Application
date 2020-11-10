@@ -39,4 +39,19 @@ $(document).ready(() => {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }
+
+
+  $("#button-one").click(function (event) {
+    event.preventDefault();
+    console.log("is this working");
+    $(".signup").hide();
+    $(".signup2").show();
+  })
+
+  // $("button-one").click(function (event) {
+  //   event.preventDefault();
+  //   console.log("is this working");
+  //   $(".signup").addClass("hide");
+  //   $(".signup2").removeClass("hide");
+  // })
 });

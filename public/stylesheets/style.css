@@ -27,3 +27,15 @@ form.login {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.signup {
+  display: block;
+}
+
+.signup2 {
+  display: none;
+}
+
+.signup3 {
+  display: none;
+}
