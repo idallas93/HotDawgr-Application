@@ -17,11 +17,20 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       len: [1]
     },
-    name: {
+
+    dogName: {
       type: DataTypes.STRING,
       allowNull: false,
       len: [1]
     },
+
+    humanName: {
+      type: DataTypes.STRING,
+      allowNull: fakse,
+      len: [1]
+
+    },
+
     age: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -39,17 +48,20 @@ module.exports = function(sequelize, DataTypes) {
       len: [1]
     },
 
+    
+
     plainText: {
       type: DataTypes.STRING,
       allowNull: false,
       len: [1]
     }
+    
   });
 
   // Add a belongsTo association to Authors here
   // Example: https://github.com/sequelize/express-example/blob/master/models/task.js
   Dog.associate = db => {
-    Dog.belongsTo(db.Dog);
+    Dog.belongsTo(db.Author);
   };
   return Dog;
 };
