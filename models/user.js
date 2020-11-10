@@ -31,5 +31,8 @@ module.exports = function(sequelize, DataTypes) {
       null
     );
   });
+  User.associate = db => {
+    User.hasMany(db.Dog);
+  };
   return User;
 };

@@ -23,7 +23,7 @@ module.exports = function(sequelize, DataTypes) {
       len: [1]
     },
     age: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       len: [1]
     },
