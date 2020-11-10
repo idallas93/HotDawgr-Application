@@ -3,6 +3,10 @@ $(document).ready(() => {
   const signUpForm = $("form.signup");
   const emailInput = $("input#email-input");
   const passwordInput = $("input#password-input");
+  // Getting references to Dog Inputs
+  const dogBreed = $("#dogType-input");
+  const dogGender = $("input[name='gender']:checked");
+  const dogNeutered = $("input[name='dogFix']:checked");
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", event => {
