@@ -10,7 +10,7 @@ $(document).ready(() => {
   const dogGender = $("input[name='gender']:checked");
   const dogNeutered = $("input[name='dogFix']:checked");
   const dogName = $("#dogName-input");
-  const dogAge = $("#dogAge-input"); 
+  const dogAge = $("#dogAge-input");
   const dogColor = $("#dogFur-input");
   const lookingFor = $("input[name='typeDate']:checked");
   const dogBio = $("#dogBio");
@@ -115,43 +115,49 @@ $(document).ready(() => {
 
   // AGE LISTING
   for (let i = 18; i < 41; i++) {
-    if(i===40){const option = $("<option></option>").text("40+").val(i)
-    $('#humanAge').append(option)} 
+    if (i === 40) {
+      const option = $("<option></option>").text("40+").val(i)
+      $('#humanAge').append(option)
+    }
     else {
-    const option = $("<option></option>").text(i).val(i)
-    $('#humanAge').append(option)
-    console.log("running")
-    console.log(option.val())}
+      const option = $("<option></option>").text(i).val(i)
+      $('#humanAge').append(option)
+      console.log("running")
+      console.log(option.val())
+    }
   }
 
   for (let i = 1; i < 21; i++) {
-    if(i===20){const option = $("<option></option>").text("20+").val(i)
-    $('#dogAge').append(option)} 
-    else 
-    {const option = $("<option></option>").text(i).val(i)
-    $('#dogAge').append(option)
-    console.log("running")
-    console.log(option.val())}
+    if (i === 20) {
+      const option = $("<option></option>").text("20+").val(i)
+      $('#dogAge').append(option)
+    }
+    else {
+      const option = $("<option></option>").text(i).val(i)
+      $('#dogAge').append(option)
+      console.log("running")
+      console.log(option.val())
+    }
   }
 
   $("#button-one").click(function (event) {
     event.preventDefault();
     console.log("is this working");
+    $(".signup").hide();
+    $(".signup2").show();
     if (!userData.email || !userData.password) {
       return;
     }
-    $(".signup").hide();
-    $(".signup2").show();
   })
 
   $("#button-two-next").click(function (event) {
     event.preventDefault();
     console.log("is this working");
+    $(".signup2").hide();
+    $(".signup3").show();
     if (!dogData.breed || !dogData.dogName || !dogData.color || !dogData.dogBio) {
       return;
     }
-    $(".signup2").hide();
-    $(".signup3").show();
   })
 
   $("#button-two-back").click(function (event) {
