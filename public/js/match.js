@@ -11,24 +11,25 @@ $(document).ready(() => {
     renderNew();
   });
 
-  function randomDog() {
-    let id;
-    $.get("/api/dogs", data => {
-      id = Math.floor(Math.random() * (data.length - 1));
-    });
-    return id;
-  }
+  // async function randomDog() {
+  //   const newData = await $.get("/api/dogs", (data) => {});
+  //   console.log("newdata", newData);
+  //   const id = Math.floor(Math.random() * (newData.length - 1));
+  //   console.log("id", id);
+  //   return id;
+  // }
 
-  function renderNew() {
-    const id = randomDog();
-    $.get("/api/dogs/", data => {
+  async function renderNew() {
+    let id;
+    await $.get("/api/dogs/", data => {
+      // console.log(data);
+      // console.log(data.length);
+      id = Math.floor(Math.random() * (data.length - 1));
       const newData = data.filter(row => {
-        console.log(row.UserId);
+        // console.log(row.UserId);
         return row.UserId !== parseInt(localStorage.getItem("currentID"));
       });
-      let currentDog = newData[id];
-      currentDog = newData[0];
-      console.log(newData[0]);
+      const currentDog = newData[id];
       const dogInfo =
         "Doggo name: " +
         currentDog.dogName +
@@ -43,21 +44,24 @@ $(document).ready(() => {
       $("#typeDate").text(looking);
     });
 
-    $.get("/api/userInfo/", currentDog => {
+    $.get("/api/userInfo/", data => {
+      console.log(data);
+      const currentHuman = data[id];
+      console.log(currentHuman);
       const humanInfo =
         "Owner name: " +
-        currentDog.name +
+        currentHuman.name +
         " Age: " +
-        currentDog.age +
+        currentHuman.age +
         " Gender: " +
-        currentDog.gender;
+        currentHuman.gender;
       $("#asnHuman").text(humanInfo);
-      const humanText = "Bio:" + currentDog.humanBio;
+      const humanText = "Bio:" + currentHuman.humanBio;
       $("#humanBio").text(humanText);
-      const locate = "Location: " + currentDog.city;
+      const locate = "Location: " + currentHuman.city;
       $("#location").text(locate);
     });
   }
 
-  renderInfo();
+  renderNew();
 });
