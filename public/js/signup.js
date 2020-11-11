@@ -79,7 +79,7 @@ $(document).ready(() => {
             age: human.age,
             humanBio: human.humanBio
           });
-          // window.location.replace("/members");
+          window.location.replace("/members");
           // If there's an error, handle it by throwing up a bootstrap alert
         });
       })
