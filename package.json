@@ -1,7 +1,6 @@
 {
-  "name": "1-Passport-Example",
+  "name": "1-passport-example",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "npm run lint",
@@ -18,6 +17,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.0",
     "express-session": "^1.16.1",
+    "mysql": "^2.18.1",
     "mysql2": "^1.7.0",
     "node-fetch": "^2.6.1",
     "passport": "^0.4.0",
@@ -36,5 +36,14 @@
     "nodemon": "^2.0.6",
     "prettier": "^1.13.7",
     "sequelize-cli": "^6.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idallas93/project-two-group.git"
+  },
+  "bugs": {
+    "url": "https://github.com/idallas93/project-two-group/issues"
+  },
+  "homepage": "https://github.com/idallas93/project-two-group#readme",
+  "description": ""
 }

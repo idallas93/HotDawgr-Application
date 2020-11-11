@@ -54,10 +54,12 @@ $(document).ready(() => {
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  function signUpUser(email, password, dog, human) {
-    $.post("/api/signup", {
-      email: email,
-      password: password
+  function signUpUser(emailData, passwordData, dog, human) {
+    console.log(dog);
+    console.log(human);
+    $.post("/api/user", {
+      email: emailData,
+      password: passwordData
     })
       .then(() => {
         // window.location.replace("/members");
