@@ -41,6 +41,12 @@ module.exports = function(sequelize, DataTypes) {
       len: [1]
     },
 
+    photo: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      len: [1]
+    },
+
     dogBio: {
       type: DataTypes.STRING,
       allowNull: false,
