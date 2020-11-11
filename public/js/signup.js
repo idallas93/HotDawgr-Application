@@ -11,7 +11,7 @@ $(document).ready(() => {
   const dogGender = $("input[name='gender']:checked");
   const dogNeutered = $("input[name='dogFix']:checked");
   const dogName = $("#dogName-input");
-  const dogAge = $("#dogAge-input");
+  const dogAge = $("#dogAge");
   const dogColor = $("#dogFur-input");
   const lookingFor = $("input[name='typeDate']:checked");
   const dogBio = $("#dogBio");
@@ -21,32 +21,13 @@ $(document).ready(() => {
   const humanGender = $("input[name='genderHuman']:checked");
   const humanCity = $("#cityLocation-input");
   const humanName = $("#humanName-input");
-  const humanAge = $("#humanAge-input");
-  const humanBio = $("#humanBio-input");
+  const humanAge = $("#humanAge");
+  const humanBio = $("#humanBio");
 
   // Objects to send to tables
   let userData = {};
   let dogData = {};
   let humanData = {};
-
-  dogSignupForm.on("submit", event => {
-    event.preventDefault();
-    dogData = {
-      breed: dogBreed.val().trim(),
-      gender: dogGender.val(),
-      fixed: dogNeutered.val(),
-      dogName: dogName.val().trim(),
-      age: dogAge.val(),
-      color: dogColor.val().trim(),
-      reason: lookingFor.val(),
-      dogBio: dogBio.val().trim()
-    };
-
-    // return if any string fields are empty
-    if (!dogBreed.val() || !dogName.val() || !dogColor.val() || !dogBio.val()) {
-      return;
-    }
-  });
 
   humanSignupForm.on("submit", event => {
     event.preventDefault();
@@ -68,31 +49,41 @@ $(document).ready(() => {
     console.log(humanData);
 
     // Send info to User, Dog, and userInfo
-    // signUpUser(userData.email, userData.password);
-    // signUpDog(dogData);
-    // signUpHuman(dogData);
+    signUpUser(userData.email, userData.password, dogData, humanData);
   });
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  function signUpUser(email, password) {
+  function signUpUser(email, password, dog, human) {
     $.post("/api/signup", {
       email: email,
       password: password
     })
       .then(() => {
-        window.location.replace("/members");
+        // window.location.replace("/members");
         // If there's an error, handle it by throwing up a bootstrap alert
+        $.post("/api/dogs", {
+          breed: dog.breed,
+          gender: dog.gender,
+          fixed: dog.fixed,
+          dogName: dog.dogName,
+          age: dog.age,
+          color: dog.color,
+          reason: dog.reason,
+          dogBio: dog.dogBio
+        }).then(() => {
+          $.post("/api/userInfo", {
+            gender: human.gender,
+            city: human.city,
+            name: human.name,
+            age: human.age,
+            humanBio: human.humanBio
+          });
+          // window.location.replace("/members");
+          // If there's an error, handle it by throwing up a bootstrap alert
+        });
       })
       .catch(handleLoginErr);
-  }
-
-  function signUpDog(dog) {
-    // TODO: Define function
-  }
-
-  function signUpHuman(human) {
-    // TODO: Define function
   }
 
   function handleLoginErr(err) {
@@ -145,13 +136,11 @@ $(document).ready(() => {
       return;
     }
 
-    console.log("submitting first form");
     event.preventDefault();
     userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
     };
-    console.log(userData);
 
     $(".signup").hide();
     $(".signup2").show();
@@ -159,15 +148,23 @@ $(document).ready(() => {
 
   $("#button-two-next").click(event => {
     event.preventDefault();
-    console.log("is this working");
-    if (
-      !dogData.breed ||
-      !dogData.dogName ||
-      !dogData.color ||
-      !dogData.dogBio
-    ) {
+
+    dogData = {
+      breed: dogBreed.val().trim(),
+      gender: dogGender.val(),
+      fixed: dogNeutered.val(),
+      dogName: dogName.val().trim(),
+      age: dogAge.val(),
+      color: dogColor.val().trim(),
+      reason: lookingFor.val(),
+      dogBio: dogBio.val().trim()
+    };
+
+    // return if any string fields are empty
+    if (!dogBreed.val() || !dogName.val() || !dogColor.val() || !dogBio.val()) {
       return;
     }
+
     $(".signup2").hide();
     $(".signup3").show();
   });
