@@ -1,5 +1,4 @@
 $(document).ready(() => {
-
   $("#yes").click(event => {
     event.preventDefault();
     console.log("woof");
@@ -11,21 +10,28 @@ $(document).ready(() => {
     console.log("ruff");
     renderNew();
   });
+
   function randomDog() {
+    let id;
     $.get("/api/dogs", data => {
-      console.log(data)
-      // data.filter()
-      return Math.floor(Math.random() * data.length);
+      id = Math.floor(Math.random() * (data.length - 1));
     });
+    return id;
   }
+
   function renderNew() {
-    let id = randomDog();
-    }
+    const id = randomDog();
     $.get("/api/dogs/", data => {
-      const currentDog = data[id];
+      const newData = data.filter(row => {
+        console.log(row.UserId);
+        return row.UserId !== parseInt(localStorage.getItem("currentID"));
+      });
+      let currentDog = newData[id];
+      currentDog = newData[0];
+      console.log(newData[0]);
       const dogInfo =
         "Doggo name: " +
-        currentDog.name +
+        currentDog.dogName +
         " Age: " +
         currentDog.age +
         " Gender: " +
@@ -36,6 +42,7 @@ $(document).ready(() => {
       const looking = "Is looking for: " + currentDog.reason;
       $("#typeDate").text(looking);
     });
+
     $.get("/api/userInfo/", currentDog => {
       const humanInfo =
         "Owner name: " +
@@ -51,4 +58,6 @@ $(document).ready(() => {
       $("#location").text(locate);
     });
   }
+
+  renderInfo();
 });

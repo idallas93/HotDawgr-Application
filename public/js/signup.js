@@ -84,7 +84,7 @@ $(document).ready(() => {
             humanBio: human.humanBio,
             UserId: user.id
           });
-          // window.location.replace("/match");
+          window.location.replace("/match");
           // If there's an error, handle it by throwing up a bootstrap alert
         });
       })
