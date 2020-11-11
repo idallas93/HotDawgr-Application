@@ -12,7 +12,7 @@ form.login {
   margin-top: 50px;
 }
 #catch {
-  color: rgb(80, 16, 0);
+  color: rgb(0, 175, 219);
   left: 0;
   line-height: 200px;
   margin-top: -100px;
@@ -24,12 +24,15 @@ form.login {
 }
 #catch-button {
   position: relative;
+  text-align: center;
   width: 100px;
   height: 100px;
-  background: red;
-  left: 10px;
-  top: 100px;
+  background: rgb(0, 175, 219);
+  left: 31rem;
+  top: 25rem;
+  border-radius: 20px;
 }
+
 .image {
   background-color: #cccccc;
   background-image: url("picture.jpg");
