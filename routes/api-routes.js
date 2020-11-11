@@ -84,11 +84,12 @@ module.exports = function(app) {
       breed: req.body.breed,
       gender: req.body.gender,
       fixed: req.body.fixed,
-      name: req.body.name,
+      dogName: req.body.dogName,
       age: req.body.age,
       color: req.body.color,
       reason: req.body.reason,
-      plainText: req.body.plainText
+      photo: "",
+      dogBio: req.body.dogBio
     }).then(dbDog => {
       res.json(dbDog);
     });

@@ -35,7 +35,7 @@ module.exports = function(sequelize, DataTypes) {
     User.hasMany(db.Dog);
   };
   User.associate = db => {
-    User.hasOne(db.Dog);
+    User.hasOne(db.UserInfo);
   };
   return User;
 };

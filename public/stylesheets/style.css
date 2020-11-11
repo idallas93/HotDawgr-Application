@@ -1,3 +1,11 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
 form.signup,
 form.login {
   margin-top: 50px;
@@ -68,4 +76,24 @@ form.login {
 }
 #save {
   display: none;
+}
+
+.container {
+  background-color: #ff7788;
+}
+
+.btn {
+  margin-top: 1rem;
+  border: 0.1rem solid rgb(86, 165, 235, 0.25);
+  width: 10rem;
+}
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+  transform: translateY(-0.1rem);
+  transition: transform 150ms;
+}
+
+.navbar-custom {
+  background-color: #ececec;
 }
