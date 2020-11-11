@@ -101,3 +101,27 @@ $(document).ready(() => {
     $("#alert").fadeIn(500);
   }
 });
+function ageListing(){
+    for (let i = 18; i < 41; i++) {
+      if(i===40){const option = $("<option></option>").text("40+").val(i)
+      $('#humanAge').append(option)} 
+      else {
+      const option = $("<option></option>").text(i).val(i)
+      $('#humanAge').append(option)
+      console.log("running")
+      console.log(option.val())}
+    }
+  }
+  function dogAgeListing(){
+    for (let i = 1; i < 21; i++) {
+      if(i===20){const option = $("<option></option>").text("20+").val(i)
+      $('#dogAge').append(option)} 
+      else 
+      {const option = $("<option></option>").text(i).val(i)
+      $('#dogAge').append(option)
+      console.log("running")
+      console.log(option.val())}
+    }
+  }
+ageListing()
+dogAgeListing()
