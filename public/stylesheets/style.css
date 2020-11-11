@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   margin: 0;
   padding: 0;
   color: #333;
@@ -22,13 +23,12 @@ form.login {
   font-weight: bold;
 }
 #catch-button {
-  left: 900px;
-  margin-top: -100px;
-  position: absolute;
-  text-align: center;
-  top: 65%;
-  width: 5%;
-  border-radius: 20%;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: red;
+  left: 10px;
+  top: 100px;
 }
 .image {
   background-color: #cccccc;
@@ -77,11 +77,9 @@ form.login {
 #save {
   display: none;
 }
-
-.container {
-  background-color: #ff7788;
+.white {
+  background-color: white;
 }
-
 .btn {
   margin-top: 1rem;
   border: 0.1rem solid rgb(86, 165, 235, 0.25);
