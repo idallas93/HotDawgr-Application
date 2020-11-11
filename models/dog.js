@@ -51,6 +51,16 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       len: [1]
+    },
+    matches: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      len: [0]
+    },
+    likedDogs: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      len: [0]
     }
   });
   // Add a belongsTo association to Authors here
