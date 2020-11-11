@@ -29,6 +29,7 @@ $(document).ready(() => {
       password: passwordInput.val().trim()
     };
 
+    // return if any fields are empty
     if (!userData.email || !userData.password) {
       return;
     }
@@ -42,14 +43,39 @@ $(document).ready(() => {
     event.preventDefault();
     const dogData = {
       breed: dogBreed.val().trim(),
-      gender: dogGender.val().trim(),
+      gender: dogGender.val(),
       fixed: dogNeutered.val(),
       dogName: dogName.val().trim(),
-      age: dogAge.val().trim(),
+      age: dogAge.val(),
       color: dogColor.val().trim(),
-      reason: lookingFor.val().trim(),
+      reason: lookingFor.val(),
       dogBio: dogBio.val().trim()
     }
+
+    // return if any string fields are empty
+    if (!dogData.breed || !dogData.dogName || !dogData.color || !dogData.dogBio) {
+      return;
+    }
+
+    signUpDog(dogData);
+  })
+
+  humanSignupForm.on("submit", event => {
+    event.preventDefault();
+    const humanData = {
+      gender: humanGender.val(),
+      city: humanCity.val().trim(),
+      name: humanName.val().trim(),
+      age: humanAge.val(),
+      humanBio: humanBio.val().trim()
+    }
+
+    // return if any string fields are empty
+    if (!humanData.city || !humanData.name || !humanData.humanBio) {
+      return;
+    }
+
+    signUpHuman(dogData);
   })
 
   // Does a post to the signup route. If successful, we are redirected to the members page
@@ -64,6 +90,10 @@ $(document).ready(() => {
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);
+  }
+
+  function signUpDog(dog) {
+    // TODO: Define function
   }
 
   function handleLoginErr(err) {
