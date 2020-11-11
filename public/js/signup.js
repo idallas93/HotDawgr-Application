@@ -1,8 +1,10 @@
 $(document).ready(() => {
   // Getting references to our form and input
-  const signUpForm = $("form.signup");
+  const signUpForm = $("form .signup");
   const emailInput = $("input#email-input");
+  const usernameInput = $("#username-input")
   const passwordInput = $("input#password-input");
+  const passwordConfirm = $("#passwordConfirm-input")
 
   // Getting references to Dog Inputs
   const dogSignupForm = $("form.signup2");
@@ -30,19 +32,18 @@ $(document).ready(() => {
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", event => {
+    console.log("submitting first form")
     event.preventDefault();
     userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
     };
 
-    // return if any fields are empty
-    if (!userData.email || !userData.password) {
+    // return if any fields are empty or if password isn't confirmed properly
+    if (!emailInput.val() || !passwordInput.val() || passwordInput.val() !== passwordConfirm.val()) {
+      console.log(passwordInput, passwordConfirm)
       return;
     }
-
-    emailInput.val("");
-    passwordInput.val("");
   });
 
   dogSignupForm.on("submit", event => {
@@ -59,7 +60,7 @@ $(document).ready(() => {
     }
 
     // return if any string fields are empty
-    if (!dogData.breed || !dogData.dogName || !dogData.color || !dogData.dogBio) {
+    if (!dogBreed.val() || !dogName.val() || !dogColor.val() || !dogBio.val()) {
       return;
     }
 
@@ -80,10 +81,14 @@ $(document).ready(() => {
       return;
     }
 
+    console.log(userData)
+    console.log(dogData)
+    console.log(humanData)
+
     // Send info to User, Dog, and userInfo
-    signUpUser(userData.email, userData.password);
-    signUpDog(dogData);
-    signUpHuman(dogData);
+    // signUpUser(userData.email, userData.password);
+    // signUpDog(dogData);
+    // signUpHuman(dogData);
   })
 
   // Does a post to the signup route. If successful, we are redirected to the members page
@@ -123,7 +128,6 @@ $(document).ready(() => {
     console.log("running")
     console.log(option.val())}
   }
-
   for (let i = 1; i < 21; i++) {
     if(i===20){const option = $("<option></option>").text("20+").val(i)
     $('#dogAge').append(option)} 
@@ -134,10 +138,11 @@ $(document).ready(() => {
     console.log(option.val())}
   }
 
+  // Buttons navigating forms
   $("#button-one").click(function (event) {
     event.preventDefault();
-    console.log("is this working");
-    if (!userData.email || !userData.password) {
+    // Can't continue unless all fields filled
+    if (!emailInput.val() || !usernameInput.val() || !passwordInput.val() || !passwordConfirm.val()) {
       return;
     }
     $(".signup").hide();
