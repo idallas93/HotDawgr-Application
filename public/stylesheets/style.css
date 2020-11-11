@@ -1,3 +1,11 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
 form.signup,
 form.login {
   margin-top: 50px;
@@ -37,6 +45,8 @@ form.login {
   margin-right: 117px;
 }
 
+
+
 .matchContainer {
   max-width: 1400px;
 }
@@ -71,7 +81,7 @@ form.login {
 }
 
 .container {
-  background-color: bisque;
+  background-color: blanchedalmond;
 }
 
 .btn {
