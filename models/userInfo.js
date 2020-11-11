@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    bio: {
+    humanBio: {
       type: DataTypes.STRING,
       allowNull: false,
     },

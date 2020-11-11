@@ -41,6 +41,7 @@ module.exports = function(sequelize, DataTypes) {
       len: [1]
     },
 
+<<<<<<< HEAD
     photo: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -48,6 +49,9 @@ module.exports = function(sequelize, DataTypes) {
     },
 
     bio: {
+=======
+    dogBio: {
+>>>>>>> 90e7539a2a7a4bf1371d2d0e8bc020e3a5fd3655
       type: DataTypes.STRING,
       allowNull: false,
       len: [1]
