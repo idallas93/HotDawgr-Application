@@ -10,6 +10,8 @@ fetch("https://api.thedogapi.com/v1/images/search?limit=100", {
   .then(data => console.log(data));
 
 //   iterate through dog array and for each one create an entry into the database/ randomly choose male or female/ randomly choose and age/
+<<<<<<< HEAD
+=======
 
 // for (i = 0; i <= data.length; i++) {}
 
@@ -28,3 +30,4 @@ app.post("/api/dogs", (req, res) => {
     res.json(dbDog);
   });
 });
+>>>>>>> 690d9f289a8657e099e0618fe452fcaff5dc1600

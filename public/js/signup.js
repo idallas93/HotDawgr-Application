@@ -126,7 +126,8 @@ $(document).ready(() => {
   // Buttons navigating forms
   $("#button-one").click(event => {
     event.preventDefault();
-
+    $(".signup").hide();
+    $(".signup2").show();
     // return if any fields are empty or if password isn't confirmed properly
     if (
       !emailInput.val() ||
