@@ -1,4 +1,5 @@
 $(document).ready(() => {
+
   $("#yes").click(event => {
     event.preventDefault();
     console.log("woof");
@@ -12,12 +13,14 @@ $(document).ready(() => {
   });
   function randomDog() {
     $.get("/api/dogs", data => {
+      console.log(data)
+      // data.filter()
       return Math.floor(Math.random() * data.length);
     });
   }
   function renderNew() {
-    const id = randomDog();
-    // eslint-disable-next-line no-empty-function
+    let id = randomDog();
+    }
     $.get("/api/dogs/", data => {
       const currentDog = data[id];
       const dogInfo =

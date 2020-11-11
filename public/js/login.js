@@ -28,7 +28,9 @@ $(document).ready(() => {
       email: email,
       password: password
     })
-      .then(() => {
+      .then(user => {
+        console.log("logging in:", user);
+        localStorage.setItem("currentID", user.id);
         window.location.replace("/match");
         // If there's an error, log the error
       })
