@@ -93,6 +93,19 @@ module.exports = function(app) {
       res.json(dbDog);
     });
   });
+  // userinfo
+  app.post("/api/userInfo", (req, res) => {
+    console.log("user info", req.body);
+    db.UserInfo.create({
+      gender: req.body.gender,
+      city: req.body.city,
+      name: req.body.name,
+      age: req.body.age,
+      humanBio: req.body.humanBio,
+    }).then(dbUserInfo => {
+      res.json(dbUserInfo);
+    });
+  });
   // delete route for deleting dogs
   app.delete("/api/dogs/:id", (req, res) => {
     db.Dog.destroy({
