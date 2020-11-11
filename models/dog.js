@@ -52,7 +52,6 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       len: [1]
     }
-    
   });
 
   // Add a belongsTo association to Authors here
@@ -62,4 +61,3 @@ module.exports = function(sequelize, DataTypes) {
   };
   return Dog;
 };
-

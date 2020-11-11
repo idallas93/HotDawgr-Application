@@ -2,25 +2,24 @@ module.exports = function(sequelize, DataTypes) {
   const UserInfo = sequelize.define("UserInfo", {
     gender: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: false
     },
     city: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     age: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: false
     },
     humanBio: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    
+      allowNull: false
+    }
   });
 
   // Add a belongsTo association to Authors here

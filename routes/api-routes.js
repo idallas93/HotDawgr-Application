@@ -101,7 +101,7 @@ module.exports = function(app) {
       city: req.body.city,
       name: req.body.name,
       age: req.body.age,
-      humanBio: req.body.humanBio,
+      humanBio: req.body.humanBio
     }).then(dbUserInfo => {
       res.json(dbUserInfo);
     });

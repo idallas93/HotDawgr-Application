@@ -112,8 +112,6 @@ $(document).ready(() => {
         .text(i)
         .val(i);
       $("#humanAge").append(option);
-      console.log("running");
-      console.log(option.val());
     }
   }
   for (let i = 1; i < 21; i++) {
@@ -127,8 +125,6 @@ $(document).ready(() => {
         .text(i)
         .val(i);
       $("#dogAge").append(option);
-      console.log("running");
-      console.log(option.val());
     }
   }
 
