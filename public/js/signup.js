@@ -3,6 +3,7 @@ $(document).ready(() => {
   const signUpForm = $("form.signup");
   const emailInput = $("input#email-input");
   const passwordInput = $("input#password-input");
+
   // Getting references to Dog Inputs
   const dogSignupForm = $("form.signup2");
   const dogBreed = $("#dogType-input");
@@ -13,6 +14,7 @@ $(document).ready(() => {
   const dogColor = $("#dogFur-input");
   const lookingFor = $("input[name='typeDate']:checked");
   const dogBio = $("#dogBio");
+
   // Getting references to human info
   const humanSignupForm = $("form.signup3");
   const humanGender = $("input[name='genderHuman']:checked");
@@ -21,10 +23,15 @@ $(document).ready(() => {
   const humanAge = $("#humanAge-input");
   const humanBio = $("#humanBio-input");
 
+  // Objects to send to tables
+  let userData = {};
+  let dogData = {};
+  let humanData = {};
+
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", event => {
     event.preventDefault();
-    const userData = {
+    userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
     };
@@ -33,15 +40,14 @@ $(document).ready(() => {
     if (!userData.email || !userData.password) {
       return;
     }
-    // If we have an email and password, run the signUpUser function
-    signUpUser(userData.email, userData.password);
+
     emailInput.val("");
     passwordInput.val("");
   });
 
   dogSignupForm.on("submit", event => {
     event.preventDefault();
-    const dogData = {
+    dogData = {
       breed: dogBreed.val().trim(),
       gender: dogGender.val(),
       fixed: dogNeutered.val(),
@@ -57,12 +63,11 @@ $(document).ready(() => {
       return;
     }
 
-    signUpDog(dogData);
   })
 
   humanSignupForm.on("submit", event => {
     event.preventDefault();
-    const humanData = {
+    humanData = {
       gender: humanGender.val(),
       city: humanCity.val().trim(),
       name: humanName.val().trim(),
@@ -75,6 +80,9 @@ $(document).ready(() => {
       return;
     }
 
+    // Send info to User, Dog, and userInfo
+    signUpUser(userData.email, userData.password);
+    signUpDog(dogData);
     signUpHuman(dogData);
   })
 
@@ -96,32 +104,68 @@ $(document).ready(() => {
     // TODO: Define function
   }
 
+  function signUpHuman(human) {
+    // TODO: Define function
+  }
+
   function handleLoginErr(err) {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }
+
+  // AGE LISTING
+  for (let i = 18; i < 41; i++) {
+    if(i===40){const option = $("<option></option>").text("40+").val(i)
+    $('#humanAge').append(option)} 
+    else {
+    const option = $("<option></option>").text(i).val(i)
+    $('#humanAge').append(option)
+    console.log("running")
+    console.log(option.val())}
+  }
+
+  for (let i = 1; i < 21; i++) {
+    if(i===20){const option = $("<option></option>").text("20+").val(i)
+    $('#dogAge').append(option)} 
+    else 
+    {const option = $("<option></option>").text(i).val(i)
+    $('#dogAge').append(option)
+    console.log("running")
+    console.log(option.val())}
+  }
+
+  $("#button-one").click(function (event) {
+    event.preventDefault();
+    console.log("is this working");
+    if (!userData.email || !userData.password) {
+      return;
+    }
+    $(".signup").hide();
+    $(".signup2").show();
+  })
+
+  $("#button-two-next").click(function (event) {
+    event.preventDefault();
+    console.log("is this working");
+    if (!dogData.breed || !dogData.dogName || !dogData.color || !dogData.dogBio) {
+      return;
+    }
+    $(".signup2").hide();
+    $(".signup3").show();
+  })
+
+  $("#button-two-back").click(function (event) {
+    event.preventDefault();
+    console.log("is this working");
+    $(".signup2").hide();
+    $(".signup").show();
+  })
+  $("#button-three-back").click(function (event) {
+    event.preventDefault();
+    console.log("is this working");
+    $(".signup3").hide();
+    $(".signup2").show();
+  })
+
 });
-function ageListing(){
-    for (let i = 18; i < 41; i++) {
-      if(i===40){const option = $("<option></option>").text("40+").val(i)
-      $('#humanAge').append(option)} 
-      else {
-      const option = $("<option></option>").text(i).val(i)
-      $('#humanAge').append(option)
-      console.log("running")
-      console.log(option.val())}
-    }
-  }
-  function dogAgeListing(){
-    for (let i = 1; i < 21; i++) {
-      if(i===20){const option = $("<option></option>").text("20+").val(i)
-      $('#dogAge').append(option)} 
-      else 
-      {const option = $("<option></option>").text(i).val(i)
-      $('#dogAge').append(option)
-      console.log("running")
-      console.log(option.val())}
-    }
-  }
-ageListing()
-dogAgeListing()
+
