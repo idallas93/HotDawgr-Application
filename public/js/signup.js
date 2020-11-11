@@ -1,8 +1,7 @@
+/* eslint-disable no-unused-vars */
 $(document).ready(() => {
   // Getting references to our form and input
-  const signUpForm = $("form .signup");
   const emailInput = $("input#email-input");
-  const usernameInput = $("#username-input");
   const passwordInput = $("input#password-input");
   const passwordConfirm = $("#passwordConfirm-input");
 
@@ -29,26 +28,6 @@ $(document).ready(() => {
   let userData = {};
   let dogData = {};
   let humanData = {};
-
-  // When the signup button is clicked, we validate the email and password are not blank
-  signUpForm.on("submit", event => {
-    console.log("submitting first form");
-    event.preventDefault();
-    userData = {
-      email: emailInput.val().trim(),
-      password: passwordInput.val().trim()
-    };
-
-    // return if any fields are empty or if password isn't confirmed properly
-    if (
-      !emailInput.val() ||
-      !passwordInput.val() ||
-      passwordInput.val() !== passwordConfirm.val()
-    ) {
-      console.log(passwordInput, passwordConfirm);
-      return;
-    }
-  });
 
   dogSignupForm.on("submit", event => {
     event.preventDefault();
@@ -89,9 +68,9 @@ $(document).ready(() => {
     console.log(humanData);
 
     // Send info to User, Dog, and userInfo
-    signUpUser(userData.email, userData.password);
-    signUpDog(dogData);
-    signUpHuman(dogData);
+    // signUpUser(userData.email, userData.password);
+    // signUpDog(dogData);
+    // signUpHuman(dogData);
   });
 
   // Does a post to the signup route. If successful, we are redirected to the members page
@@ -156,25 +135,29 @@ $(document).ready(() => {
   // Buttons navigating forms
   $("#button-one").click(event => {
     event.preventDefault();
-    console.log("is this working");
     $(".signup").hide();
     $(".signup2").show();
-    // Can't continue unless all fields filled
+    // return if any fields are empty or if password isn't confirmed properly
     if (
       !emailInput.val() ||
-      !usernameInput.val() ||
       !passwordInput.val() ||
-      !passwordConfirm.val()
+      passwordInput.val() !== passwordConfirm.val()
     ) {
       return;
     }
+
+    console.log("submitting first form");
+    event.preventDefault();
+    userData = {
+      email: emailInput.val().trim(),
+      password: passwordInput.val().trim()
+    };
+    console.log(userData);
   });
 
   $("#button-two-next").click(event => {
     event.preventDefault();
     console.log("is this working");
-    $(".signup2").hide();
-    $(".signup3").show();
     if (
       !dogData.breed ||
       !dogData.dogName ||
@@ -183,6 +166,8 @@ $(document).ready(() => {
     ) {
       return;
     }
+    $(".signup2").hide();
+    $(".signup3").show();
   });
 
   $("#button-two-back").click(event => {

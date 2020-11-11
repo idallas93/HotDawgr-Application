@@ -45,8 +45,6 @@ form.login {
   margin-right: 117px;
 }
 
-
-
 .matchContainer {
   max-width: 1400px;
 }
@@ -81,7 +79,7 @@ form.login {
 }
 
 .container {
-  background-color: blanchedalmond;
+  background-color: #ff7788;
 }
 
 .btn {
@@ -94,4 +92,8 @@ form.login {
   box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
   transform: translateY(-0.1rem);
   transition: transform 150ms;
+}
+
+.navbar-custom {
+  background-color: #ececec;
 }
