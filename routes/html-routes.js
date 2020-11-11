@@ -29,4 +29,9 @@ module.exports = function(app) {
   app.get("/chat", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/chat.html"));
   });
+  app.get("/signup", (req, res) => {
+    // If the user already has an account send them to the members page
+
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
+  });
 };
