@@ -22,13 +22,14 @@ module.exports = function(app) {
   // otherwise send back an error
   app.post("/api/user", (req, res) => {
     console.log("here");
-    console.log(req);
     db.User.create({
       email: req.body.email,
       password: req.body.password
     })
-      .then(() => {
-        res.redirect(307, "/api/login");
+      .then(user => {
+        loggedInID = user.id;
+        res.json(user);
+        // res.redirect(307, "/api/login");
       })
       .catch(err => {
         res.status(401).json(err);
@@ -58,6 +59,7 @@ module.exports = function(app) {
 
   // get route for getting all of the dogs
   app.get("/api/dogs/", (req, res) => {
+    console.log(loggedInID);
     db.Dog.findAll({}).then(dbDog => {
       dbDog.currentID = loggedInID;
       res.json(dbDog);
@@ -95,21 +97,22 @@ module.exports = function(app) {
       color: req.body.color,
       reason: req.body.reason,
       photo: "",
-      dogBio: req.body.dogBio
+      dogBio: req.body.dogBio,
+      UserId: req.body.UserId
     }).then(dbDog => {
       res.json(dbDog);
     });
   });
   // userinfo
   app.post("/api/userInfo", (req, res) => {
-    loggedInID = req.user.id;
     console.log("user info", req.body);
     db.UserInfo.create({
       gender: req.body.gender,
       city: req.body.city,
       name: req.body.name,
       age: req.body.age,
-      humanBio: req.body.humanBio
+      humanBio: req.body.humanBio,
+      UserId: req.body.UserId
     }).then(dbUserInfo => {
       res.json(dbUserInfo);
     });
