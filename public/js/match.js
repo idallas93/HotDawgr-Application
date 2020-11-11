@@ -26,8 +26,8 @@ $(document).ready(() => {
         console.log(row.UserId);
         return row.UserId !== parseInt(localStorage.getItem("currentID"));
       });
-      // const currentDog = newData[id];
-      const currentDog = newData[0];
+      let currentDog = newData[id];
+      currentDog = newData[0];
       console.log(newData[0]);
       const dogInfo =
         "Doggo name: " +
@@ -58,4 +58,6 @@ $(document).ready(() => {
       $("#location").text(locate);
     });
   }
+
+  renderInfo();
 });
