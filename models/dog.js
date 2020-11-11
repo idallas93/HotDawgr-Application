@@ -41,7 +41,7 @@ module.exports = function(sequelize, DataTypes) {
       len: [1]
     },
 
-    bio: {
+    dogBio: {
       type: DataTypes.STRING,
       allowNull: false,
       len: [1]
