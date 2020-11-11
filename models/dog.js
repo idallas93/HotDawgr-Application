@@ -8,12 +8,12 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     gender: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       len: [1]
     },
     fixed: {
-      type: DataTypes.STRING,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
       len: [1]
     },
@@ -24,15 +24,8 @@ module.exports = function(sequelize, DataTypes) {
       len: [1]
     },
 
-    humanName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      len: [1]
-
-    },
-
     age: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       len: [1]
     },
@@ -43,7 +36,7 @@ module.exports = function(sequelize, DataTypes) {
     },
 
     reason: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       len: [1]
     },
@@ -59,7 +52,8 @@ module.exports = function(sequelize, DataTypes) {
   // Add a belongsTo association to Authors here
   // Example: https://github.com/sequelize/express-example/blob/master/models/task.js
   Dog.associate = db => {
-    Dog.belongsTo(db.Author);
+    Dog.belongsTo(db.User);
   };
   return Dog;
 };
+
