@@ -1,24 +1,24 @@
 $(document).ready(() => {
-  $("#yes").click((event) => {
+  $("#yes").click(event => {
     event.preventDefault();
     console.log("woof");
     renderNew();
   });
 
-  $("#nope").click((event) => {
+  $("#nope").click(event => {
     event.preventDefault();
     console.log("ruff");
     renderNew();
   });
   function randomDog() {
-    $.get("/api/dogs", (data) => {
+    $.get("/api/dogs", data => {
       return Math.floor(Math.random() * data.length);
     });
   }
   function renderNew() {
     const id = randomDog();
     // eslint-disable-next-line no-empty-function
-    $.get("/api/dogs/" + id, (data) => {
+    $.get("/api/dogs/" + id, data => {
       const dogInfo =
         "Doggo name: " +
         data.name +
@@ -27,12 +27,12 @@ $(document).ready(() => {
         " Gender: " +
         data.gender;
       $("#asn").text(dogInfo);
-      const dogText = "Bio:" + <br /> + data.dogBio;
+      const dogText = "Bio:" + data.dogBio;
       $("#dogBio").text(dogText);
       const looking = "Is looking for: " + data.reason;
       $("#typeDate").text(looking);
     });
-    $.get("/api/userInfo/" + id, (data) => {
+    $.get("/api/userInfo/" + id, data => {
       const humanInfo =
         "Owner name: " +
         data.name +
@@ -41,7 +41,7 @@ $(document).ready(() => {
         " Gender: " +
         data.gender;
       $("#asnHuman").text(humanInfo);
-      const humanText = "Bio:" + <br /> + data.humanBio;
+      const humanText = "Bio:" + data.humanBio;
       $("#humanBio").text(humanText);
       const locate = "Location: " + data.city;
       $("#location").text(locate);
