@@ -1,12 +1,15 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
+// Global ID variable to keep track of who's logged in
+let loggedInID;
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
+    loggedInID = req.user.id;
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
       email: req.user.email,
@@ -17,13 +20,16 @@ module.exports = function(app) {
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
-  app.post("/api/signup", (req, res) => {
+  app.post("/api/user", (req, res) => {
+    console.log("here");
     db.User.create({
       email: req.body.email,
       password: req.body.password
     })
-      .then(() => {
-        res.redirect(307, "/api/login");
+      .then(user => {
+        loggedInID = user.id;
+        res.json(user);
+        // res.redirect(307, "/api/login");
       })
       .catch(err => {
         res.status(401).json(err);
@@ -52,8 +58,10 @@ module.exports = function(app) {
   });
 
   // get route for getting all of the dogs
-  app.get("/api/dogs/", (_req, res) => {
+  app.get("/api/dogs/", (req, res) => {
+    console.log(loggedInID);
     db.Dog.findAll({}).then(dbDog => {
+      dbDog.currentID = loggedInID;
       res.json(dbDog);
     });
   });
@@ -89,7 +97,8 @@ module.exports = function(app) {
       color: req.body.color,
       reason: req.body.reason,
       photo: "",
-      dogBio: req.body.dogBio
+      dogBio: req.body.dogBio,
+      UserId: req.body.UserId
     }).then(dbDog => {
       res.json(dbDog);
     });
@@ -102,7 +111,8 @@ module.exports = function(app) {
       city: req.body.city,
       name: req.body.name,
       age: req.body.age,
-      humanBio: req.body.humanBio
+      humanBio: req.body.humanBio,
+      UserId: req.body.UserId
     }).then(dbUserInfo => {
       res.json(dbUserInfo);
     });

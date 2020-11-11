@@ -10,41 +10,54 @@ $(document).ready(() => {
     console.log("ruff");
     renderNew();
   });
+
   function randomDog() {
+    let id;
     $.get("/api/dogs", data => {
-      return Math.floor(Math.random() * data.length);
+      id = Math.floor(Math.random() * (data.length - 1));
     });
+    return id;
   }
+
   function renderNew() {
     const id = randomDog();
-    // eslint-disable-next-line no-empty-function
-    $.get("/api/dogs/" + id, data => {
+    $.get("/api/dogs/", data => {
+      const newData = data.filter(row => {
+        console.log(row.UserId);
+        return row.UserId !== parseInt(localStorage.getItem("currentID"));
+      });
+      let currentDog = newData[id];
+      currentDog = newData[0];
+      console.log(newData[0]);
       const dogInfo =
         "Doggo name: " +
-        data.name +
+        currentDog.dogName +
         " Age: " +
-        data.age +
+        currentDog.age +
         " Gender: " +
-        data.gender;
+        currentDog.gender;
       $("#asn").text(dogInfo);
-      const dogText = "Bio:" + data.dogBio;
+      const dogText = "Bio:" + currentDog.dogBio;
       $("#dogBio").text(dogText);
-      const looking = "Is looking for: " + data.reason;
+      const looking = "Is looking for: " + currentDog.reason;
       $("#typeDate").text(looking);
     });
-    $.get("/api/userInfo/" + id, data => {
+
+    $.get("/api/userInfo/", currentDog => {
       const humanInfo =
         "Owner name: " +
-        data.name +
+        currentDog.name +
         " Age: " +
-        data.age +
+        currentDog.age +
         " Gender: " +
-        data.gender;
+        currentDog.gender;
       $("#asnHuman").text(humanInfo);
-      const humanText = "Bio:" + data.humanBio;
+      const humanText = "Bio:" + currentDog.humanBio;
       $("#humanBio").text(humanText);
-      const locate = "Location: " + data.city;
+      const locate = "Location: " + currentDog.city;
       $("#location").text(locate);
     });
   }
+
+  renderInfo();
 });
