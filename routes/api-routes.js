@@ -19,7 +19,6 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/user", (req, res) => {
-    console.log("here");
     db.User.create({
       email: req.body.email,
       password: req.body.password
@@ -31,6 +30,68 @@ module.exports = function(app) {
       .catch(err => {
         res.status(401).json(err);
       });
+  });
+
+  // Update user
+  app.put("/api/user:id", (req, res) => {
+    db.User.update(
+      {
+        email: req.body.email,
+        password: req.body.password
+      },
+      {
+        where: {
+          id: req.params.id
+        }
+      }
+    ).then(db => {
+      res.json(db);
+    });
+  });
+
+  // Update dog
+  app.put("/api/dogs:id", (req, res) => {
+    db.Dog.update(
+      {
+        breed: req.body.breed,
+        gender: req.body.gender,
+        fixed: req.body.fixed,
+        dogName: req.body.dogName,
+        age: req.body.age,
+        color: req.body.color,
+        reason: req.body.reason,
+        photo: "",
+        dogBio: req.body.dogBio,
+        UserId: req.body.UserId
+      },
+      {
+        where: {
+          id: req.params.id
+        }
+      }
+    ).then(db => {
+      res.json(db);
+    });
+  });
+
+  app.put("/api/userInfo:id", (req, res) => {
+    db.UserInfo.update(
+      {
+        gender: req.body.gender,
+        city: req.body.city,
+        name: req.body.name,
+        age: req.body.age,
+        humanBio: req.body.humanBio,
+        UserId: req.body.UserId
+      },
+      {
+        where: {
+          id: req.params.id
+        }
+      }
+    ).then(db => {
+      res.json(db);
+    });
   });
 
   // Route for logging user out
@@ -53,6 +114,7 @@ module.exports = function(app) {
       });
     }
   });
+  
 
   // get route for getting all of the dogs
   app.get("/api/dogs/", (req, res) => {
@@ -60,11 +122,9 @@ module.exports = function(app) {
       res.json(dbDog);
     });
   });
+
   // get route for retrieving a single dog
   app.get("/api/dogs/:id", (req, res) => {
-    console.log(req);
-    console.log("touching");
-    console.log(req.params.id);
     db.Dog.findOne({
       where: {
         UserId: req.params.id
@@ -75,6 +135,18 @@ module.exports = function(app) {
       res.json(dbDog);
     });
   });
+
+  // get route for retrieving a single user
+  app.get("/api/user/:id", (req, res) => {
+    db.User.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(db => {
+      res.json(db);
+    });
+  });
+
   // get route for retrieving a single dog
   app.get("/api/userInfo/:id", (req, res) => {
     console.log(req);
