@@ -46,5 +46,6 @@ $(document).ready(() => {
   $("#edits").click(event => {
     event.preventDefault();
     $("#field").prop("disabled", false);
+    $("#save").show();
   });
 });
