@@ -85,6 +85,14 @@ module.exports = function(app) {
       res.json(dbDog);
     });
   });
+  // get route for retrieving userInfo
+  app.get("/api/userInfo/", (req, res) => {
+    console.log(loggedInID);
+    db.UserInfo.findAll({}).then(dbHuman => {
+      // console.log(dbHuman);
+      res.json(dbHuman);
+    });
+  });
   // post route for saving a new dog
   app.post("/api/dogs", (req, res) => {
     console.log("dog object", req.body);
@@ -117,6 +125,7 @@ module.exports = function(app) {
       res.json(dbUserInfo);
     });
   });
+
   // delete route for deleting dogs
   app.delete("/api/dogs/:id", (req, res) => {
     db.Dog.destroy({
