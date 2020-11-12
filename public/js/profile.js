@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 $(document).ready(() => {
+<<<<<<< HEAD
   // DEPENDENCIES
   const email = $("#email-input");
   const password = $("#password-input");
@@ -16,6 +17,8 @@ $(document).ready(() => {
   const humanAge = $("#humanAge-input");
   const humanBio = $("#humanBio");
 
+=======
+>>>>>>> eb58427a698b445a095d96b633635af517ddcf9b
   async function renderCurrent() {
     const id = parseInt(localStorage.getItem("currentID"));
     const query1 = "/api/user/" + id;
