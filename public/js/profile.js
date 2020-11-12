@@ -1,24 +1,5 @@
 /* eslint-disable no-unused-vars */
 $(document).ready(() => {
-<<<<<<< HEAD
-  // DEPENDENCIES
-  const email = $("#email-input");
-  const password = $("#password-input");
-  const dogType = $("#dogType-input");
-  const dogGender = $(".dogGender");
-  const dogFixed = $(".dogFix");
-  const reason = $(".typeDate");
-  const dogName = $("#dogName-input");
-  const dogAge = $("#dogAge-input");
-  const dogColor = $("#dogFur-input");
-  const dogBio = $("#dogBio");
-  const location = $("#cityLocation-input");
-  const humanName = $("#humanName-input");
-  const humanAge = $("#humanAge-input");
-  const humanBio = $("#humanBio");
-
-=======
->>>>>>> eb58427a698b445a095d96b633635af517ddcf9b
   async function renderCurrent() {
     const id = parseInt(localStorage.getItem("currentID"));
     const query1 = "/api/user/" + id;
