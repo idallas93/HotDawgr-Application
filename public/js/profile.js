@@ -107,7 +107,7 @@ $(document).ready(() => {
       }).then(() => {
         $.ajax({
           method: "PUT",
-          url: "/api/userInfo" + id,
+          url: "/api/userInfo/" + id,
           data: {
             gender: humanGender.val(),
             city: location.val(),
