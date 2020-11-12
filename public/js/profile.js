@@ -1,9 +1,29 @@
 /* eslint-disable no-unused-vars */
 $(document).ready(() => {
+<<<<<<< HEAD
+  // DEPENDENCIES
+  const email = $("#email-input");
+  const password = $("#password-input");
+  const dogType = $("#dogType-input");
+  const dogGender = $(".dogGender");
+  const dogFixed = $(".dogFix");
+  const reason = $(".typeDate");
+  const dogName = $("#dogName-input");
+  const dogAge = $("#dogAge-input");
+  const dogColor = $("#dogFur-input");
+  const dogBio = $("#dogBio");
+  const location = $("#cityLocation-input");
+  const humanName = $("#humanName-input");
+  const humanAge = $("#humanAge-input");
+  const humanBio = $("#humanBio");
+
+=======
+>>>>>>> eb58427a698b445a095d96b633635af517ddcf9b
   async function renderCurrent() {
     const id = parseInt(localStorage.getItem("currentID"));
-    const query = "/api/dogs/" + id;
-    const query2 = "/api/userInfo/" + id;
+    const query1 = "/api/user/" + id;
+    const query2 = "/api/dogs/" + id;
+    const query3 = "/api/userInfo/" + id;
     const check = function(selector, key) {
       for (i = 0; i < selector.length; i++) {
         if (parseInt(selector[i].value) === myDog[key]) {
@@ -11,28 +31,42 @@ $(document).ready(() => {
         }
       }
     };
-    const myDog = await $.get(query, () => {
+
+    // Grabbing user's information
+    const myUser = await $.get(query1, () => {
       return;
     });
 
-    $("#dogType-input").text(myDog.breed);
-    // fixed
-    check($(".dogGender"), "gender");
-    check($(".dogFix"), "fixed");
-    check($(".typeDate"), "reason");
-    $("#dogName-input").val(myDog.dogName);
-    $("#dogAge-input").val(myDog.age);
-    $("#dogFur-input").val(myDog.color);
-    // is looking for
-    $("#dogBio").text(myDog.dogBio);
-    const myHuman = await $.get(query2, () => {
+    const myDog = await $.get(query2, () => {
       return;
     });
-    console.log(myHuman);
-    $("#cityLocation-input").val(myHuman.city);
-    $("#humanName-input").val(myHuman.name);
-    $("#humanAge-input").val(myHuman.age);
-    $("#humanBio").text(myHuman.humanBio);
+
+    const myHuman = await $.get(query3, () => {
+      return;
+    });
+
+    // PUTTING INFO ON PAGE
+    // User info
+    email.val(myUser.email);
+    password.val(myUser.password); //UNHASHING ???
+
+    // Dog info
+    dogType.val(myDog.breed);
+    // fixed
+    check(dogGender, "gender");
+    check(dogFixed, "fixed");
+    check(reason, "reason");
+    dogName.val(myDog.dogName);
+    dogAge.val(myDog.age);
+    dogColor.val(myDog.color);
+    // is looking for
+    dogBio.text(myDog.dogBio);
+
+    // Human info
+    location.val(myHuman.city);
+    humanName.val(myHuman.name);
+    humanAge.val(myHuman.age);
+    humanBio.text(myHuman.humanBio);
   }
   renderCurrent();
   //   auto select dog gender
@@ -47,31 +81,43 @@ $(document).ready(() => {
     event.preventDefault();
     id = localStorage.getItem("currentID");
     // Update database info
-    $.put("/api/user" + id, {
-      email: emailData,
-      password: passwordData
+    $.ajax({
+      method: "PUT",
+      url: "/api/user" + id,
+      data: {
+        email: email.val(),
+        password: password.val()
+      }
     }).then(user => {
       console.log("user updated:", user);
       // window.location.replace("/members");
       // If there's an error, handle it by throwing up a bootstrap alert
-      $.put("/api/dogs" + id, {
-        breed: dog.breed,
-        gender: dog.gender,
-        fixed: dog.fixed,
-        dogName: dog.dogName,
-        age: dog.age,
-        color: dog.color,
-        reason: dog.reason,
-        dogBio: dog.dogBio,
-        UserId: user.id
-      }).then(() => {
-        $.put("/api/userInfo" + id, {
-          gender: human.gender,
-          city: human.city,
-          name: human.name,
-          age: human.age,
-          humanBio: human.humanBio,
+      $.ajax({
+        method: "PUT",
+        url: "/api/dogs" + id,
+        data: {
+          breed: dogType.val(),
+          gender: dogGender.val(),
+          fixed: dogFixed.val(),
+          dogName: dog.dogName,
+          age: dog.age,
+          color: dog.color,
+          reason: dog.reason,
+          dogBio: dog.dogBio,
           UserId: user.id
+        }
+      }).then(() => {
+        $.ajax({
+          method: "PUT",
+          url: "/api/userInfo" + id,
+          data: {
+            gender: human.gender,
+            city: human.city,
+            name: human.name,
+            age: human.age,
+            humanBio: human.humanBio,
+            UserId: user.id
+          }
         });
       });
     });

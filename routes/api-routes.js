@@ -129,8 +129,6 @@ module.exports = function(app) {
         UserId: req.params.id
       }
     }).then(dbDog => {
-      console.log("coming in");
-      console.log(dbDog);
       res.json(dbDog);
     });
   });
@@ -142,35 +140,29 @@ module.exports = function(app) {
         id: req.params.id
       }
     }).then(db => {
+      console.log(db);
       res.json(db);
     });
   });
 
   // get route for retrieving a single dog
   app.get("/api/userInfo/:id", (req, res) => {
-    console.log(req);
-    console.log("touching");
-    console.log(req.params.id);
     db.UserInfo.findOne({
       where: {
         UserId: req.params.id
       }
     }).then(dbHuman => {
-      console.log("coming in");
-      console.log(dbHuman);
       res.json(dbHuman);
     });
   });
   // get route for retrieving userInfo
   app.get("/api/userInfo/", (req, res) => {
     db.UserInfo.findAll({}).then(dbHuman => {
-      // console.log(dbHuman);
       res.json(dbHuman);
     });
   });
   // post route for saving a new dog
   app.post("/api/dogs", (req, res) => {
-    console.log("dog object", req.body);
     db.Dog.create({
       breed: req.body.breed,
       gender: req.body.gender,
@@ -188,7 +180,6 @@ module.exports = function(app) {
   });
   // userinfo
   app.post("/api/userInfo", (req, res) => {
-    console.log("user info", req.body);
     db.UserInfo.create({
       gender: req.body.gender,
       city: req.body.city,
