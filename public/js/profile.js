@@ -1,12 +1,5 @@
 /* eslint-disable no-unused-vars */
 $(document).ready(() => {
-  // function(){
-  //         $("#save").on('click', '.btn', function (event) {
-  //             event.preventDefault();
-  //             $(this).prev('fieldset').prop('disabled');
-  //             $("#save").css("display", "hide")
-  //         });
-  //         });
   async function renderCurrent() {
     const id = parseInt(localStorage.getItem("currentID"));
     const query = "/api/dogs/" + id;

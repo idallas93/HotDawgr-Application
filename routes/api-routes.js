@@ -114,7 +114,6 @@ module.exports = function(app) {
       });
     }
   });
-  
 
   // get route for getting all of the dogs
   app.get("/api/dogs/", (req, res) => {
