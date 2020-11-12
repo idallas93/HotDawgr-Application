@@ -45,7 +45,8 @@ $(document).ready(() => {
     });
 
     $.get("/api/userInfo/", data => {
-      console.log(data);
+      // console.log(data);
+      console.log(data[0].age);
       const currentHuman = data[id];
       console.log(currentHuman);
       const humanInfo =

@@ -142,7 +142,7 @@ $(document).ready(() => {
       password: passwordInput.val().trim()
     };
 
-    $(".signup").hide();
+    $(".signup1").hide();
     $(".signup2").show();
   });
 
@@ -171,13 +171,11 @@ $(document).ready(() => {
 
   $("#button-two-back").click(event => {
     event.preventDefault();
-    console.log("is this working");
     $(".signup2").hide();
-    $(".signup").show();
+    $(".signup1").show();
   });
   $("#button-three-back").click(event => {
     event.preventDefault();
-    console.log("is this working");
     $(".signup3").hide();
     $(".signup2").show();
   });
