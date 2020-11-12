@@ -34,6 +34,7 @@
   <div class="container white">
     <form class="update-form">
       <h1 style="text-align: center;">PROFILE</h1>
+      <button class="btn btn-primary" id="edits">Edit</button>
       <fieldset disabled id="field">
         <div class="form-group">
           <label for="exInputEmail1">Email address:</label>
@@ -74,11 +75,12 @@
         <!-- NEED SLIDERS -->
         <div class="form-group">
           <label for="typeDate">Currently seeking:</label><br />
-          <input type="radio" name="typeDate" value="0" checked /> Play Date
-          <input type="radio" name="typeDate" value="1" /> Breeding
-          <input type="radio" name="typeDate" value="2" /> Make new friends
-          <input type="radio" name="typeDate" value="3" /> Meet other dog
-          owners <input type="radio" name="typeDate" value="4" /> Other
+          <select id="typeDate" class="typeDate" name="typeDate">
+            <option value="0">Play Date</option>
+            <option value="1">Make new friends</option>
+            <option value="2">Meet other dogs</option> 
+            <option value="3">Other</option>
+          </select>
         </div>
         <!-- DOG AGE SLIDER -->
         <div class="form-group">
@@ -87,9 +89,11 @@
         </div>
         <div class="form-group">
           <label for="genderHuman">What's your gender?</label><br />
-          <input type="radio" name="genderHuman" value="1" checked /> Male
-          <input type="radio" name="genderHuman" value="0" /> Female
-          <input type="radio" name="genderHuman" value="2" /> Non-Binary
+          <select id="humanGender" class="humanGender" name="humanGender">
+            <option value="0">Male</option>
+            <option value="1">Female</option>
+            <option value="2">Non-Binary</option> 
+          </select>
         </div>
         <div class="form-group">
           <label for="exInputCity">Current City:</label>
@@ -108,7 +112,6 @@
         <label for="exInputBio">About you:</label>
         <textarea class="form-control" id="humanBio" placeholder=></textarea>
       </fieldset>
-      <button class="btn btn-primary" id="edits">Edit</button>
       <button type="submit" class="btn btn-primary" id="save">Save</button>
     </form>
 

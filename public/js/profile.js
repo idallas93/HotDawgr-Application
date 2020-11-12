@@ -1,24 +1,22 @@
 /* eslint-disable no-unused-vars */
 $(document).ready(() => {
-<<<<<<< HEAD
   // DEPENDENCIES
   const email = $("#email-input");
   const password = $("#password-input");
   const dogType = $("#dogType-input");
   const dogGender = $(".dogGender");
   const dogFixed = $(".dogFix");
-  const reason = $(".typeDate");
+  const reason = $("#typeDate");
   const dogName = $("#dogName-input");
   const dogAge = $("#dogAge-input");
   const dogColor = $("#dogFur-input");
   const dogBio = $("#dogBio");
+  const humanGender = $("#humanGender")
   const location = $("#cityLocation-input");
   const humanName = $("#humanName-input");
   const humanAge = $("#humanAge-input");
   const humanBio = $("#humanBio");
 
-=======
->>>>>>> eb58427a698b445a095d96b633635af517ddcf9b
   async function renderCurrent() {
     const id = parseInt(localStorage.getItem("currentID"));
     const query1 = "/api/user/" + id;
@@ -99,11 +97,11 @@ $(document).ready(() => {
           breed: dogType.val(),
           gender: dogGender.val(),
           fixed: dogFixed.val(),
-          dogName: dog.dogName,
-          age: dog.age,
-          color: dog.color,
-          reason: dog.reason,
-          dogBio: dog.dogBio,
+          dogName: dogName.val(),
+          age: dogAge.val(),
+          color: dogColor.val(),
+          reason: reason.val(),
+          dogBio: dogBio.val(),
           UserId: user.id
         }
       }).then(() => {
@@ -111,14 +109,16 @@ $(document).ready(() => {
           method: "PUT",
           url: "/api/userInfo" + id,
           data: {
-            gender: human.gender,
-            city: human.city,
-            name: human.name,
-            age: human.age,
-            humanBio: human.humanBio,
+            gender: humanGender.val(),
+            city: location.val(),
+            name: humanName.val(),
+            age: humanAge.val(),
+            humanBio: humanBio.val(),
             UserId: user.id
           }
         });
+        $("#field").prop("disabled", true);
+        $("#save").hide();
       });
     });
   });
