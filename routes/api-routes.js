@@ -74,7 +74,7 @@ module.exports = function(app) {
     });
   });
 
-  app.put("/api/userInfo:id", (req, res) => {
+  app.put("/api/userInfo/:id", (req, res) => {
     db.UserInfo.update(
       {
         gender: req.body.gender,
@@ -140,7 +140,6 @@ module.exports = function(app) {
         id: req.params.id
       }
     }).then(db => {
-      console.log(db);
       res.json(db);
     });
   });
