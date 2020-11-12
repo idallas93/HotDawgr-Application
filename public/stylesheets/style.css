@@ -51,17 +51,18 @@ form.login {
   max-width: 1400px;
 }
 #nope {
-  position: fixed;
+  position: relative;
   /* margin-left: -150px; */
   padding: 50px;
-  left: 50px;
-  bottom: 500px;
+  left: -7rem;
+  top: 17rem;
+
 }
 #yes {
-  position: fixed;
+  position: relative;
   /* margin-left: 50px; */
-  right: 50px;
-  bottom: 500px;
+  left: 2rem;
+  top: 17rem;
   padding: 50px;
 }
 

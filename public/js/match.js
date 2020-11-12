@@ -37,15 +37,15 @@ $(document).ready(() => {
 
   async function renderNew() {
     let id;
+    let currentDog;
+    let userid;
     await $.get("/api/dogs/", data => {
-      // console.log(data);
-      // console.log(data.length);
       id = Math.floor(Math.random() * (data.length - 1));
       const newData = data.filter(row => {
-        // console.log(row.UserId);
         return row.UserId !== parseInt(localStorage.getItem("currentID"));
       });
-      const currentDog = newData[id];
+      currentDog = newData[id];
+      userid = currentDog.UserId;
       const dogInfo =
         "Doggo name: " +
         currentDog.dogName +
@@ -55,15 +55,15 @@ $(document).ready(() => {
         gender[currentDog.gender];
       $("#asn").text(dogInfo);
       const dogText = "Bio:" + currentDog.dogBio;
-      $("#dogBio").text(dogText);
+      $("#bio").text(dogText);
       const looking = "Is looking for: " + reason[currentDog.reason];
       $("#typeDate").text(looking);
     });
 
     $.get("/api/userInfo/", data => {
-      // console.log(data);
-      console.log(data[0].age);
-      const currentHuman = data[id];
+      console.log(data);
+      const currentHuman = data[userid];
+      console.log("index", localStorage.getItem("currentID"));
       console.log(currentHuman);
       const humanInfo =
         "Owner name: " +
