@@ -8,17 +8,17 @@ $(document).ready(() => {
   // Getting references to Dog Inputs
   const dogSignupForm = $("form.signup2");
   const dogBreed = $("#dogType-input");
-  const dogGender = $("input[name='gender']:checked");
-  const dogNeutered = $("input[name='dogFix']:checked");
+  const dogGender = $(".dogGender");
+  const dogNeutered = $(".dogFix");
   const dogName = $("#dogName-input");
   const dogAge = $("#dogAge");
   const dogColor = $("#dogFur-input");
-  const lookingFor = $("input[name='typeDate']:checked");
+  const lookingFor = $(".typeDate");
   const dogBio = $("#dogBio");
 
   // Getting references to human info
   const humanSignupForm = $("form.signup3");
-  const humanGender = $("input[name='genderHuman']:checked");
+  const humanGender = $(".genderHuman");
   const humanCity = $("#cityLocation-input");
   const humanName = $("#humanName-input");
   const humanAge = $("#humanAge");
