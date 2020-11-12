@@ -1,4 +1,20 @@
 $(document).ready(() => {
+  // DEPENDENCIES
+  const gender = ["male", "female", "non-binary"];
+  const reason = [
+    "Playdate",
+    "Breeding",
+    "Make new friends",
+    "Meet new dogs",
+    "Non-specific"
+  ];
+
+  // Play Date
+  //             <input type="radio" name="typeDate" value="1" /> Breeding
+  //             <input type="radio" name="typeDate" value="2" /> Make new friends
+  //             <input type="radio" name="typeDate" value="3" /> Meet other dog
+  //             owners <input type="radio" name="typeDate" value="4" /> Other
+
   $("#yes").click(event => {
     event.preventDefault();
     console.log("woof");
@@ -36,11 +52,11 @@ $(document).ready(() => {
         " Age: " +
         currentDog.age +
         " Gender: " +
-        currentDog.gender;
+        gender[currentDog.gender];
       $("#asn").text(dogInfo);
       const dogText = "Bio:" + currentDog.dogBio;
       $("#dogBio").text(dogText);
-      const looking = "Is looking for: " + currentDog.reason;
+      const looking = "Is looking for: " + reason[currentDog.reason];
       $("#typeDate").text(looking);
     });
 
@@ -54,7 +70,7 @@ $(document).ready(() => {
         " Age: " +
         currentHuman.age +
         " Gender: " +
-        currentHuman.gender;
+        gender[currentHuman.gender];
       $("#asnHuman").text(humanInfo);
       const humanText = "Bio:" + currentHuman.humanBio;
       $("#humanBio").text(humanText);
