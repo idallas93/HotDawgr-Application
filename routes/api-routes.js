@@ -2,15 +2,13 @@
 const db = require("../models");
 const passport = require("../config/passport");
 // Global ID variable to keep track of who's logged in
-let loggedInID;
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
-    loggedInID = req.user.id;
-    // Sending back a password, even a hashed password, isn't a good idea
+    // Sending back a confirmation if password matches email
     res.json({
       email: req.user.email,
       id: req.user.id
@@ -27,7 +25,6 @@ module.exports = function(app) {
       password: req.body.password
     })
       .then(user => {
-        loggedInID = user.id;
         res.json(user);
         // res.redirect(307, "/api/login");
       })
@@ -59,9 +56,7 @@ module.exports = function(app) {
 
   // get route for getting all of the dogs
   app.get("/api/dogs/", (req, res) => {
-    console.log(loggedInID);
     db.Dog.findAll({}).then(dbDog => {
-      dbDog.currentID = loggedInID;
       res.json(dbDog);
     });
   });
@@ -90,7 +85,6 @@ module.exports = function(app) {
   });
   // get route for retrieving userInfo
   app.get("/api/userInfo/", (req, res) => {
-    console.log(loggedInID);
     db.UserInfo.findAll({}).then(dbHuman => {
       // console.log(dbHuman);
       res.json(dbHuman);
