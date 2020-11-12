@@ -87,14 +87,21 @@
             </div>
             <div class="form-group">
               <label for="gender">Gender of Dog?</label><br />
-              <input type="radio" name="gender" value="0" checked /> Male
-              <input type="radio" name="gender" value="1" /> Female
-              <input type="radio" name="gender" value="2" /> Non-Binary
+              <select id="dogGender" class="dogGender" name="dogGender">
+                <option value="0">Male</option>
+                <option value="1">Female</option>
+                <option value="2">Non-binary</option> 
+              </select>
+              <!-- <input type="radio" name="gender" class="dogGender" value="0" /> Male
+              <input type="radio" name="gender" class="dogGender" value="1" checked/> Female
+              <input type="radio" name="gender" class="dogGender" value="2" /> Non-Binary -->
             </div>
             <div class="form-group">
               <label for="exInputDogFix">Is your dog neutered/fixed?</label>
-              <input type="radio" name="dogFix" value="1" checked /> Fixed
-              <input type="radio" name="dogFix" value="0" /> Not Fixed
+              <select id="dogFix" class="dogFix" name="dogFix">
+                <option value="1">Fixed</option>
+                <option value="0">Not Fixed</option>
+              </select>
             </div>
             <div class="form-group">
               <label for="exInputDogName">What's your dog's name?</label>
@@ -119,13 +126,15 @@
               />
             </div>
             <!-- NEED SLIDERS -->
+            
             <div class="form-group">
               <label for="typeDate">What are you looking for?</label><br />
-              <input type="radio" name="typeDate" value="0" checked /> Play Date
-              <input type="radio" name="typeDate" value="1" /> Breeding
-              <input type="radio" name="typeDate" value="2" /> Make new friends
-              <input type="radio" name="typeDate" value="3" /> Meet other dog
-              owners <input type="radio" name="typeDate" value="4" /> Other
+              <select id="typeDate" class="typeDate" name="typeDate">
+                <option value="0">Play Date</option>
+                <option value="1">Make new friends</option>
+                <option value="2">Meet other dogs</option> 
+                <option value="3">Other</option>
+              </select>
             </div>
             <!-- DOG AGE SLIDER -->
             <div class="form-group">
@@ -157,9 +166,11 @@
           <form class="signup3">
             <div class="form-group">
               <label for="genderHuman">What's your gender?</label><br />
-              <input type="radio" name="genderHuman" value="1" checked /> Male
-              <input type="radio" name="genderHuman" value="0" /> Female
-              <input type="radio" name="genderHuman" value="2" /> Non-Binary
+              <select id="genderHuman" class="genderHuman" name="genderHuman">
+                <option value="0">Male</option>
+                <option value="1">Female</option>
+                <option value="2">Non-binary</option> 
+              </select>
             </div>
             <div class="form-group">
               <label for="exInputCity">What city are you from?</label>

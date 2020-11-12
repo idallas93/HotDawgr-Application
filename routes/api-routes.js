@@ -60,24 +60,34 @@ module.exports = function(app) {
       res.json(dbDog);
     });
   });
-  // get route for returning certain types of dogs
-  app.get("/api/dogs/breed/:breed", (req, res) => {
-    db.Dog.findAll({
+  // get route for retrieving a single dog
+  app.get("/api/dogs/:id", (req, res) => {
+    console.log(req);
+    console.log("touching");
+    console.log(req.params.id);
+    db.Dog.findOne({
       where: {
-        category: req.params.dogType
+        UserId: req.params.id
       }
     }).then(dbDog => {
+      console.log("coming in");
+      console.log(dbDog);
       res.json(dbDog);
     });
   });
   // get route for retrieving a single dog
-  app.get("/api/dogs/:id", (req, res) => {
-    db.Dog.findOne({
+  app.get("/api/userInfo/:id", (req, res) => {
+    console.log(req);
+    console.log("touching");
+    console.log(req.params.id);
+    db.UserInfo.findOne({
       where: {
-        id: req.params.id
+        UserId: req.params.id
       }
-    }).then(dbDog => {
-      res.json(dbDog);
+    }).then(dbHuman => {
+      console.log("coming in");
+      console.log(dbHuman);
+      res.json(dbHuman);
     });
   });
   // get route for retrieving userInfo
