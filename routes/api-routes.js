@@ -77,11 +77,14 @@ module.exports = function(app) {
   });
   // get route for retrieving a single dog
   app.get("/api/dogs/:id", (req, res) => {
+    console.log(req.params.id);
     db.Dog.findOne({
       where: {
-        id: req.params.id
+        UserId: req.params.id
       }
     }).then(dbDog => {
+      console.log("coming in");
+      console.log(dbDog);
       res.json(dbDog);
     });
   });

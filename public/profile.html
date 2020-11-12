@@ -32,18 +32,14 @@
           <input type="email" class="form-control" id="email-input" placeholder="Email" />
         </div>
         <div class="form-group">
-          <label for="exInputUsername">Username:</label>
-          <input type="username" class="form-control" id="username-input" placeholder="Username" />
-        </div>
-        <div class="form-group">
           <label for="exInputDogType">Dog breed:</label>
           <input type="dogType" class="form-control" id="dogType-input" placeholder="What's your woofer?" />
         </div>
         <div class="form-group">
           <label for="gender">Dog gender:</label><br />
-          <input type="radio" name="gender" value="0" checked /> Male
-          <input type="radio" name="gender" value="1" /> Female
-          <input type="radio" name="gender" value="2" /> Non-Binary
+          <input type="radio" name="gender" class="dogGender"value="0" checked /> Male
+          <input type="radio" name="gender" class="dogGender" value="1" /> Female
+          <input type="radio" name="gender" class="dogGender" value="2" /> Non-Binary
         </div>
         <div class="form-group">
           <label for="exInputDogFix">Is your dog neutered/fixed?</label>
@@ -103,21 +99,9 @@
       <button type="submit" class="btn btn-primary" id="edits">Edit</button>
       <button type="submit" class="btn btn-primary" id="save">Save</button>
     </form>
-    <!-- PUT THIS FUNCTIONALITY IN 
-      $(function(){
-        $("#edits").on('click', '.btn', function (event) {
-            event.preventDefault();
-            $(this).prev('fieldset').removeProp('disabled');
-            $("#save").css("display", "block")
-        });
-        });-->
-    <!-- $(function(){
-            $("#save").on('click', '.btn', function (event) {
-                event.preventDefault();
-                $(this).prev('fieldset').prop('disabled');
-                $("#save").css("display", "hide")
-            });
-            }); -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="./js/profile.js"></script>
 </body>
 
 </html>
