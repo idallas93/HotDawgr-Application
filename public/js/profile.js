@@ -1,12 +1,5 @@
 /* eslint-disable no-unused-vars */
 $(document).ready(() => {
-  // function(){
-  //         $("#save").on('click', '.btn', function (event) {
-  //             event.preventDefault();
-  //             $(this).prev('fieldset').prop('disabled');
-  //             $("#save").css("display", "hide")
-  //         });
-  //         });
   async function renderCurrent() {
     const id = parseInt(localStorage.getItem("currentID"));
     const query = "/api/dogs/" + id;
@@ -47,5 +40,40 @@ $(document).ready(() => {
     event.preventDefault();
     $("#field").prop("disabled", false);
     $("#save").show();
+  });
+
+  // submit updated info
+  $(".update-form").submit(event => {
+    event.preventDefault();
+    id = localStorage.getItem("currentID");
+    // Update database info
+    $.put("/api/user" + id, {
+      email: emailData,
+      password: passwordData
+    }).then(user => {
+      console.log("user updated:", user);
+      // window.location.replace("/members");
+      // If there's an error, handle it by throwing up a bootstrap alert
+      $.put("/api/dogs" + id, {
+        breed: dog.breed,
+        gender: dog.gender,
+        fixed: dog.fixed,
+        dogName: dog.dogName,
+        age: dog.age,
+        color: dog.color,
+        reason: dog.reason,
+        dogBio: dog.dogBio,
+        UserId: user.id
+      }).then(() => {
+        $.put("/api/userInfo" + id, {
+          gender: human.gender,
+          city: human.city,
+          name: human.name,
+          age: human.age,
+          humanBio: human.humanBio,
+          UserId: user.id
+        });
+      });
+    });
   });
 });

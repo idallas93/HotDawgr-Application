@@ -39,6 +39,12 @@ $(document).ready(() => {
     let id;
     let currentDog;
     let userid;
+    const currentId = parseInt(localStorage.getItem("currentID"));
+    const query = "/api/userInfo/" + currentId;
+    const myHuman = await $.get(query, () => {
+      return;
+    });
+    $("#userName").text(myHuman.name);
     await $.get("/api/dogs/", data => {
       id = Math.floor(Math.random() * (data.length - 1));
       const newData = data.filter(row => {
