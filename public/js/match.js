@@ -55,14 +55,15 @@ $(document).ready(() => {
         gender[currentDog.gender];
       $("#asn").text(dogInfo);
       const dogText = "Bio:" + currentDog.dogBio;
-      $("#dogBio").text(dogText);
+      $("#bio").text(dogText);
       const looking = "Is looking for: " + reason[currentDog.reason];
       $("#typeDate").text(looking);
     });
 
     $.get("/api/userInfo/", data => {
       console.log(data);
-      const currentHuman = data[id];
+      const currentHuman = data[localStorage.getItem("currentID")];
+      console.log("index", localStorage.getItem("currentID"));
       console.log(currentHuman);
       const humanInfo =
         "Owner name: " +
