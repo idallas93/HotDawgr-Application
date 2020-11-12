@@ -36,7 +36,7 @@ form.login {
 }
 
 .image {
-  background-color: #F3D250;
+  background-color: #f3d250;
   /* background-image: url("stylesheets/its-clark.mp4"); */
   background-repeat: no-repeat;
   background-size: cover;
@@ -54,23 +54,22 @@ form.login {
   max-width: 1400px;
 }
 #nope {
-  position: absolute; 
+  position: absolute;
   bottom: 5px;
   left: 5px;
-  width: 70px; 
-  border: 0px solid #d6d6d6; 
-
+  width: 70px;
+  border: 0px solid #d6d6d6;
 }
 #yes {
-  position: absolute; 
+  position: absolute;
   bottom: 5px;
   right: 5px;
-  width: 70px; 
-  border: 0px solid #d6d6d6; 
+  width: 70px;
+  border: 0px solid #d6d6d6;
 }
 
 .signup {
-  display: block;
+  display: none;
 }
 
 .signup2 {
@@ -100,20 +99,19 @@ form.login {
 
 .navbar-custom {
   background-color: #ececec;
-  
 }
 
-/* Modify brand and text color */ 
-          
-.navbar-custom .navbar-brand, 
-.navbar-custom .navbar-text { 
-    color: black; 
-} 
+/* Modify brand and text color */
 
-.navbar-custom .navbar-brand, 
-.navbar-custom .navbar-text { 
-    color: black; 
-} 
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: black;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: black;
+}
 
 #myVideo {
   position: fixed;
@@ -150,7 +148,7 @@ body {
   height: 375px;
   /* border: 1px solid #9C9C9C; */
   border-radius: 25px;
-  border: 2px solid #90CCF4;
+  border: 2px solid #90ccf4;
   padding: 20px;
   background: rgb(0, 175, 219);
   border-radius: 20px;
@@ -158,9 +156,14 @@ body {
 /* #login .container #login-row #login-column #login-box #login-form {
   padding: 20px;
 } */
-#login .container #login-row #login-column #login-box #login-form #register-link {
+#login
+  .container
+  #login-row
+  #login-column
+  #login-box
+  #login-form
+  #register-link {
   margin-top: -85px;
-  
 }
 
 .text-custom {
@@ -168,8 +171,12 @@ body {
   font-style: bold;
 }
 
-.remember-user{
-  color: #f1f1f1
+.remember-user {
+  color: #f1f1f1;
+}
+
+.form-group {
+  color: #333333;
 }
 /* #F3D250 */
 /* color: #90CCF4 */
@@ -182,50 +189,46 @@ body {
   margin-top: 100px; 
  
 } */
-h2{
+h2 {
   color: #f1f1f1;
 }
-label{
+label {
   color: #f1f1f1;
 }
 
-.col-md-6{
+.col-md-6 {
   margin-left: 150px;
-  margin-right: 150px
+  margin-right: 150px;
 }
 
-p{
-  color: #f1f1f1
-}
-
-text{
+p {
   color: #f1f1f1;
-
-}
-#dogAge{
-  color: black
 }
 
-.signup1{
+text {
+  color: #f1f1f1;
+}
+#dogAge {
+  color: black;
+}
+
+.signup1 {
   border-radius: 25px;
-  border: 2px solid #90CCF4;
-  padding: 20px;
-  background: rgb(0, 175, 219);
-  border-radius: 20px;
-
-}
-
-.signup2{
-  border-radius: 25px;
-  border: 2px solid #90CCF4;
+  border: 2px solid #90ccf4;
   padding: 20px;
   background: rgb(0, 175, 219);
   border-radius: 20px;
 }
 
+.signup2 {
+  border-radius: 25px;
+  border: 2px solid #90ccf4;
+  padding: 20px;
+  background: rgb(0, 175, 219);
+  border-radius: 20px;
+}
 
-
-.card-body{
+.card-body {
   background-color: rgb(0, 175, 219);
 }
 
@@ -263,24 +266,31 @@ text{
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
 }
 .col-9 {
-position: relative;
-margin-top: -5;
+  position: relative;
+  margin-top: -5;
 }
 
 .update-form {
   margin-top: 30px;
   border-radius: 25px;
-  border: 2px solid #90CCF4;
+  border: 2px solid #90ccf4;
   padding: 20px;
   background: rgb(0, 175, 219);
   border-radius: 20px;
-  width:50%;
+  width: 50%;
   margin: auto;
   width: 50%;
   padding: 10px;
-  
+}
+
+select {
+  color: grey;
 }
