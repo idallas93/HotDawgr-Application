@@ -67,10 +67,7 @@ $(document).ready(() => {
     });
 
     $.get("/api/userInfo/", data => {
-      console.log(data);
       const currentHuman = data[userid];
-      console.log("index", localStorage.getItem("currentID"));
-      console.log(currentHuman);
       const humanInfo =
         "Owner name: " +
         currentHuman.name +

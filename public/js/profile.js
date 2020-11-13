@@ -11,7 +11,7 @@ $(document).ready(() => {
   const dogAge = $("#dogAge-input");
   const dogColor = $("#dogFur-input");
   const dogBio = $("#dogBio");
-  const humanGender = $("#humanGender")
+  const humanGender = $("#humanGender");
   const location = $("#cityLocation-input");
   const humanName = $("#humanName-input");
   const humanAge = $("#humanAge-input");
@@ -87,8 +87,6 @@ $(document).ready(() => {
         password: password.val()
       }
     }).then(user => {
-      console.log("user updated:", user);
-      // window.location.replace("/members");
       // If there's an error, handle it by throwing up a bootstrap alert
       $.ajax({
         method: "PUT",

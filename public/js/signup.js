@@ -44,10 +44,6 @@ $(document).ready(() => {
       return;
     }
 
-    // console.log(userData);
-    // console.log(dogData);
-    // console.log(humanData);
-
     // Send info to User, Dog, and userInfo
     signUpUser(userData.email, userData.password, dogData, humanData);
   });
@@ -55,15 +51,11 @@ $(document).ready(() => {
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
   function signUpUser(emailData, passwordData, dog, human) {
-    console.log(dog);
-    console.log(human);
     $.post("/api/user", {
       email: emailData,
       password: passwordData
     })
       .then(user => {
-        console.log("user created:", user);
-        // window.location.replace("/members");
         // If there's an error, handle it by throwing up a bootstrap alert
         $.post("/api/dogs", {
           breed: dog.breed,
