@@ -66,7 +66,7 @@ module.exports = function(app) {
       },
       {
         where: {
-          id: req.params.id
+          UserId: req.params.id
         }
       }
     ).then(db => {
@@ -86,7 +86,7 @@ module.exports = function(app) {
       },
       {
         where: {
-          id: req.params.id
+          UserId: req.params.id
         }
       }
     ).then(db => {
