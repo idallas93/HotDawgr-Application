@@ -38,7 +38,6 @@ $(document).ready(() => {
   async function renderNew() {
     let id;
     let currentDog;
-    let userid;
     const currentId = parseInt(localStorage.getItem("currentID"));
     const query = "/api/userInfo/" + currentId;
     const myHuman = await $.get(query, () => {
@@ -51,7 +50,6 @@ $(document).ready(() => {
         return row.UserId !== parseInt(localStorage.getItem("currentID"));
       });
       currentDog = newData[id];
-      userid = currentDog.UserId;
       const dogInfo =
         "Doggo name: " +
         currentDog.dogName +
@@ -67,7 +65,7 @@ $(document).ready(() => {
     });
 
     $.get("/api/userInfo/", data => {
-      const currentHuman = data[userid];
+      const currentHuman = data[id];
       const humanInfo =
         "Owner name: " +
         currentHuman.name +

@@ -46,7 +46,7 @@ $(document).ready(() => {
     // PUTTING INFO ON PAGE
     // User info
     email.val(myUser.email);
-    password.val(myUser.password); //UNHASHING ???
+    // password cant be unhashed, we dont populate it
 
     // Dog info
     dogType.val(myDog.breed);
