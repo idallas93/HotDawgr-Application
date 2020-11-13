@@ -9,12 +9,6 @@ $(document).ready(() => {
     "Non-specific"
   ];
 
-  // Play Date
-  //             <input type="radio" name="typeDate" value="1" /> Breeding
-  //             <input type="radio" name="typeDate" value="2" /> Make new friends
-  //             <input type="radio" name="typeDate" value="3" /> Meet other dog
-  //             owners <input type="radio" name="typeDate" value="4" /> Other
-
   $("#yes").click(event => {
     event.preventDefault();
     console.log("woof");
@@ -26,15 +20,6 @@ $(document).ready(() => {
     console.log("ruff");
     renderNew();
   });
-
-  // async function randomDog() {
-  //   const newData = await $.get("/api/dogs", (data) => {});
-  //   console.log("newdata", newData);
-  //   const id = Math.floor(Math.random() * (newData.length - 1));
-  //   console.log("id", id);
-  //   return id;
-  // }
-
   async function renderNew() {
     let id;
     let currentDog;
@@ -43,13 +28,14 @@ $(document).ready(() => {
     const myHuman = await $.get(query, () => {
       return;
     });
-    $("#userName").text(myHuman.name);
-    await $.get("/api/dogs/", data => {
+    await $.get("/api/dogs", data => {
       id = Math.floor(Math.random() * (data.length - 1));
       const newData = data.filter(row => {
         return row.UserId !== parseInt(localStorage.getItem("currentID"));
       });
+
       currentDog = newData[id];
+      console.log(currentDog);
       const dogInfo =
         "Doggo name: " +
         currentDog.dogName +
@@ -65,9 +51,8 @@ $(document).ready(() => {
     });
 
     $.get("/api/userInfo/", data => {
-      console.log(data);
       const currentHuman = data[id];
-      console.log("index", localStorage.getItem("currentID"));
+      // console.log("index", localStorage.getItem("currentID"));
       console.log(currentHuman);
       const humanInfo =
         "Owner name: " +
@@ -82,7 +67,7 @@ $(document).ready(() => {
       const locate = "Location: " + currentHuman.city;
       $("#location").text(locate);
     });
+    $("#userName").text(myHuman.name);
   }
-
   renderNew();
 });
