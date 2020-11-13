@@ -20,6 +20,7 @@ $(document).ready(() => {
     console.log("ruff");
     renderNew();
   });
+
   async function renderNew() {
     let id;
     let currentDog;
@@ -28,14 +29,13 @@ $(document).ready(() => {
     const myHuman = await $.get(query, () => {
       return;
     });
-    await $.get("/api/dogs", data => {
+    $("#userName").text(myHuman.name);
+    await $.get("/api/dogs/", data => {
       id = Math.floor(Math.random() * (data.length - 1));
       const newData = data.filter(row => {
         return row.UserId !== parseInt(localStorage.getItem("currentID"));
       });
-
       currentDog = newData[id];
-      console.log(currentDog);
       const dogInfo =
         "Doggo name: " +
         currentDog.dogName +
@@ -52,8 +52,6 @@ $(document).ready(() => {
 
     $.get("/api/userInfo/", data => {
       const currentHuman = data[id];
-      // console.log("index", localStorage.getItem("currentID"));
-      console.log(currentHuman);
       const humanInfo =
         "Owner name: " +
         currentHuman.name +
@@ -67,7 +65,7 @@ $(document).ready(() => {
       const locate = "Location: " + currentHuman.city;
       $("#location").text(locate);
     });
-    $("#userName").text(myHuman.name);
   }
+
   renderNew();
 });

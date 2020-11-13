@@ -25,7 +25,6 @@ module.exports = function(app) {
     })
       .then(user => {
         res.json(user);
-        // res.redirect(307, "/api/login");
       })
       .catch(err => {
         res.status(401).json(err);

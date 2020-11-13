@@ -46,7 +46,7 @@ $(document).ready(() => {
     // PUTTING INFO ON PAGE
     // User info
     email.val(myUser.email);
-    password.val(myUser.password); //UNHASHING ???
+    // password cant be unhashed, we dont populate it
 
     // Dog info
     dogType.val(myDog.breed);
@@ -87,8 +87,6 @@ $(document).ready(() => {
         password: password.val()
       }
     }).then(user => {
-      console.log("user updated:", user);
-      // window.location.replace("/members");
       // If there's an error, handle it by throwing up a bootstrap alert
       $.ajax({
         method: "PUT",
