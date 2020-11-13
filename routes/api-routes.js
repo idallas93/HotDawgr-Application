@@ -115,7 +115,7 @@ module.exports = function(app) {
   });
 
   // get route for getting all of the dogs
-  app.get("/api/dogs/", (req, res) => {
+  app.get("/api/dogs", (req, res) => {
     db.Dog.findAll({}).then(dbDog => {
       res.json(dbDog);
     });

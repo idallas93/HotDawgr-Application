@@ -9,12 +9,6 @@ $(document).ready(() => {
     "Non-specific"
   ];
 
-  // Play Date
-  //             <input type="radio" name="typeDate" value="1" /> Breeding
-  //             <input type="radio" name="typeDate" value="2" /> Make new friends
-  //             <input type="radio" name="typeDate" value="3" /> Meet other dog
-  //             owners <input type="radio" name="typeDate" value="4" /> Other
-
   $("#yes").click(event => {
     event.preventDefault();
     console.log("woof");
@@ -26,14 +20,6 @@ $(document).ready(() => {
     console.log("ruff");
     renderNew();
   });
-
-  // async function randomDog() {
-  //   const newData = await $.get("/api/dogs", (data) => {});
-  //   console.log("newdata", newData);
-  //   const id = Math.floor(Math.random() * (newData.length - 1));
-  //   console.log("id", id);
-  //   return id;
-  // }
 
   async function renderNew() {
     let id;
