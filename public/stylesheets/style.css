@@ -1,3 +1,4 @@
+/* all styling */
 * {
   box-sizing: border-box;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -7,10 +8,7 @@
   color: #f1f1f1;
 }
 
-form.signup,
-form.login {
-  margin-top: 50px;
-}
+/* index form styling */
 #catch {
   color: #ffffff;
   left: 0;
@@ -23,6 +21,8 @@ form.login {
   font-weight: bold;
   font-size: 100px;
 }
+
+/* button to get started */
 #catch-button {
   position: relative;
   text-align: center;
@@ -34,86 +34,12 @@ form.login {
   margin-top: auto;
   margin-left: 50%;
 }
-
+/* background videos for homepage/ signup */
 .image {
   background-color: #F3D250;
-  /* background-image: url("stylesheets/its-clark.mp4"); */
   background-repeat: no-repeat;
   background-size: cover;
 }
-.match {
-  background-image: url("picture.jpg");
-}
-.card-body {
-  background-color: white;
-  margin-left: 117px;
-  margin-right: 117px;
-}
-
-.matchContainer {
-  max-width: 1400px;
-}
-#nope {
-  position: absolute; 
-  bottom: 5px;
-  left: 20px;
-  width: 70px; 
-  border: 0px solid #d6d6d6; 
-
-}
-#yes {
-  position: absolute; 
-  bottom: 5px;
-  right: 20px;
-  width: 70px; 
-  border: 0px solid #d6d6d6; 
-}
-
-.signup {
-  display: block;
-}
-
-.signup2 {
-  display: none;
-}
-
-.signup3 {
-  display: none;
-}
-#save {
-  display: none;
-}
-.white {
-  background-color: white;
-}
-.btn {
-  margin-top: 1rem;
-  border: 0.1rem solid rgb(86, 165, 235, 0.25);
-  width: 10rem;
-}
-.btn:hover {
-  cursor: pointer;
-  box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
-  transform: translateY(-0.1rem);
-  transition: transform 150ms;
-}
-
-.navbar-custom {
-  background-color: #ececec;
-  
-}
-
-/* Modify brand and text color */ 
-          
-.navbar-custom .navbar-brand, 
-.navbar-custom .navbar-text { 
-    color: black; 
-} 
-
-.navbar-custom .navbar-brand, 
-.navbar-custom .navbar-text { 
-    color: black; 
-} 
 
 #myVideo {
   position: fixed;
@@ -133,102 +59,49 @@ form.login {
   padding: 20px;
 }
 
-.row {
-  margin: 15px;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: white;
-  height: 100vh;
-}
-#login .container #login-row #login-column #login-box {
-  margin-top: 120px;
-  max-width: 600px;
-  margin-bottom: 120px;
-  height: 375px;
-  /* border: 1px solid #9C9C9C; */
-  border-radius: 25px;
-  border: 2px solid #90CCF4;
-  padding: 20px;
-  background: rgb(0, 175, 219);
-  border-radius: 20px;
-}
-/* #login .container #login-row #login-column #login-box #login-form {
-  padding: 20px;
-} */
-#login .container #login-row #login-column #login-box #login-form #register-link {
-  margin-top: -85px;
-  
-}
-
-.text-custom {
-  color: #f1f1f1;
-  font-style: bold;
-}
-
-.remember-user{
-  color: #f1f1f1
-}
-/* #F3D250 */
-/* color: #90CCF4 */
-/* #F78888 */
-
-/* #login{
-  background-color: #F78888;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-top: 100px; 
- 
-} */
-h2{
-  color: #f1f1f1;
-}
-label{
-  color: #f1f1f1;
-}
-
-.col-md-6{
-  margin-left: 150px;
-  margin-right: 150px
-}
-
-p{
-  color: #f1f1f1
-}
-
-text{
-  color: #f1f1f1;
-
-}
-#dogAge{
-  color: black
-}
-
-.signup1{
-  border-radius: 25px;
-  border: 2px solid #90CCF4;
-  padding: 20px;
-  background: rgb(0, 175, 219);
-  border-radius: 20px;
-
-}
-
-.signup2{
-  border-radius: 25px;
-  border: 2px solid #90CCF4;
-  padding: 20px;
-  background: rgb(0, 175, 219);
-  border-radius: 20px;
-}
-
-
-
-.card-body{
+/* Match page styling */
+/* card body formatting on the match page */
+.card-body {
+  margin-left: 0px;
+  margin-right: 0px;
   background-color: rgb(0, 175, 219);
 }
 
+.matchContainer {
+  max-width: 1400px;
+}
+
+/* swipe left button */
+#nope {
+  position: absolute; 
+  bottom: 5px;
+  left: 20px;
+  width: 70px; 
+  border: 0px solid #d6d6d6; 
+
+}
+
+/* swipe right button */
+#yes {
+  position: absolute; 
+  bottom: 5px;
+  right: 20px;
+  width: 70px; 
+  border: 0px solid #d6d6d6; 
+}
+
+/* signup page styling */
+.signup {
+  display: block;
+}
+
+/* border for match image */
+.d-block{
+  border: 1px solid black; 
+  
+}
+
+/* sidebar for match page */
 .sidenav {
   height: 100%; /* Full-height: remove this if you want "auto" height */
   width: 30%; /* Set the width of the sidebar */
@@ -271,18 +144,132 @@ position: relative;
 margin-top: -5;
 }
 
-.update-form {
-  margin-top: 30px;
+.signup2 {
+  display: none;
+}
+
+.signup3 {
+  display: none;
+}
+#save {
+  display: none;
+}
+.white {
+  background-color: white;
+}
+.btn {
+  margin-top: 1rem;
+  border: 0.1rem solid rgb(86, 165, 235, 0.25);
+  width: 10rem;
+}
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+  transform: translateY(-0.1rem);
+  transition: transform 150ms;
+}
+
+/* navbar styling */
+.navbar-custom {
+  background-color: #ececec;
+  
+}
+
+/* Modify brand and text color */ 
+          
+.navbar-custom .navbar-brand, 
+.navbar-custom .navbar-text { 
+    color: black; 
+} 
+
+.navbar-custom .navbar-brand, 
+.navbar-custom .navbar-text { 
+    color: black; 
+} 
+
+/* log in/ styles sign up */
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+
+.row {
+  margin: 15px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  height: 100vh;
+}
+
+#login .container #login-row #login-column #login-box {
+  margin-top: 120px;
+  max-width: 600px;
+  margin-bottom: 120px;
+  height: 375px;
+  /* border: 1px solid #9C9C9C; */
   border-radius: 25px;
   border: 2px solid #90CCF4;
   padding: 20px;
   background: rgb(0, 175, 219);
   border-radius: 20px;
-  width:50%;
-  margin: auto;
-  width: 50%;
-  padding: 10px;
+}
+
+#login .container #login-row #login-column #login-box #login-form #register-link {
+  margin-top: -85px;
   
+}
+
+.text-custom {
+  color: #f1f1f1;
+  font-style: bold;
+}
+
+.remember-user{
+  color: #f1f1f1
+}
+
+h2{
+  color: #f1f1f1;
+}
+label{
+  color: #f1f1f1;
+}
+
+.col-md-6{
+  margin-left: 150px;
+  margin-right: 150px
+}
+
+p{
+  color: #f1f1f1
+}
+
+text{
+  color: #f1f1f1;
+
+}
+#dogAge{
+  color: black
+}
+
+.signup1{
+  border-radius: 25px;
+  border: 2px solid #90CCF4;
+  padding: 20px;
+  background: rgb(0, 175, 219);
+  border-radius: 20px;
+
+}
+
+.signup2{
+  border-radius: 25px;
+  border: 2px solid #90CCF4;
+  padding: 20px;
+  background: rgb(0, 175, 219);
+  border-radius: 20px;
 }
 
 /* sign up page drop down items styling */
@@ -306,9 +293,20 @@ margin-top: -5;
   color: black;
 }
 
-.d-block{
-  /* height: 50%; */
-  /* width: 100%;  */
-  border: 1px solid black; 
+
+.update-form {
+  margin-top: 30px;
+  border-radius: 25px;
+  border: 2px solid #90CCF4;
+  padding: 20px;
+  background: rgb(0, 175, 219);
+  border-radius: 20px;
+  width:50%;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
   
 }
+
+
+
