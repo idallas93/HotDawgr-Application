@@ -33,7 +33,7 @@ module.exports = function(app) {
   });
 
   // Update user
-  app.put("/api/user:id", (req, res) => {
+  app.put("/api/user/:id", (req, res) => {
     db.User.update(
       {
         email: req.body.email,
@@ -50,7 +50,7 @@ module.exports = function(app) {
   });
 
   // Update dog
-  app.put("/api/dogs:id", (req, res) => {
+  app.put("/api/dogs/:id", (req, res) => {
     db.Dog.update(
       {
         breed: req.body.breed,
