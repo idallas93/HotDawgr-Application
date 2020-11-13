@@ -180,4 +180,5 @@ $(document).ready(() => {
     $(".signup3").hide();
     $(".signup2").show();
   });
+
 });
