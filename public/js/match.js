@@ -21,6 +21,12 @@ $(document).ready(() => {
     renderNew();
   });
 
+  // Logging out
+  $("#logout").click(() => {
+    localStorage.setItem("currentID", "");
+    window.location.replace("/login");
+  });
+
   async function renderNew() {
     let id;
     let currentDog;

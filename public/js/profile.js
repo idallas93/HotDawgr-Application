@@ -74,6 +74,12 @@ $(document).ready(() => {
     $("#save").show();
   });
 
+  // Logging out
+  $("#logout").click(() => {
+    localStorage.setItem("currentID", "");
+    window.location.replace("/login");
+  });
+
   // submit updated info
   $(".update-form").submit(event => {
     event.preventDefault();
