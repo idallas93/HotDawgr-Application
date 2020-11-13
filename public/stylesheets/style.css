@@ -29,7 +29,7 @@ form.login {
   background: rgb(0, 175, 219);
   border-radius: 20px;
   top: 50%;
-  left: 0%;
+  left: -10%;
   font-weight: bold;
   margin-top: auto;
   margin-left: 50%;
@@ -56,7 +56,7 @@ form.login {
 #nope {
   position: absolute; 
   bottom: 5px;
-  left: 5px;
+  left: 20px;
   width: 70px; 
   border: 0px solid #d6d6d6; 
 
@@ -64,7 +64,7 @@ form.login {
 #yes {
   position: absolute; 
   bottom: 5px;
-  right: 5px;
+  right: 20px;
   width: 70px; 
   border: 0px solid #d6d6d6; 
 }
@@ -282,5 +282,33 @@ margin-top: -5;
   margin: auto;
   width: 50%;
   padding: 10px;
+  
+}
+
+/* sign up page drop down items styling */
+#dogGender{
+  color: black;
+}
+
+#dogFix{
+  color: black;
+}
+
+#typeDate{
+  color: black;
+}
+
+#genderHuman{
+  color: black;
+}
+
+#humanAge{
+  color: black;
+}
+
+.d-block{
+  /* height: 50%; */
+  /* width: 100%;  */
+  border: 1px solid black; 
   
 }
