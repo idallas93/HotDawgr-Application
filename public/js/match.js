@@ -37,10 +37,10 @@ $(document).ready(() => {
     });
     $("#userName").text(myHuman.name);
     await $.get("/api/dogs/", data => {
-      id = Math.floor(Math.random() * (data.length - 1));
       const newData = data.filter(row => {
         return row.UserId !== parseInt(localStorage.getItem("currentID"));
       });
+      id = Math.floor(Math.random() * newData.length);
       currentDog = newData[id];
       const dogInfo =
         "Doggo name: " +
@@ -57,7 +57,10 @@ $(document).ready(() => {
     });
 
     $.get("/api/userInfo/", data => {
-      const currentHuman = data[id];
+      const humanData = data.filter(row => {
+        return row.UserId !== parseInt(localStorage.getItem("currentID"));
+      });
+      const currentHuman = humanData[id];
       const humanInfo =
         "Owner name: " +
         currentHuman.name +
