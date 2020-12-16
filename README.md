@@ -8,6 +8,8 @@
   ## Description
   An app for dog owners to "like" and match with other dog owners. A user can sign up using their dog and their own information, sign in, and later modify account information.
 
+  ## Languages
+  HTML, JavaScript, CSS
 
   ## Table of Contents
   - [Deployed-Link](#Deployed-Link)
