@@ -36,7 +36,7 @@
 }
 /* background videos for homepage/ signup */
 .image {
-  background-color: #F3D250;
+  background-color: #f3d250;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -73,21 +73,30 @@
 
 /* swipe left button */
 #nope {
-  position: absolute; 
+  position: absolute;
   bottom: 5px;
   left: 20px;
-  width: 70px; 
-  border: 0px solid #d6d6d6; 
-
+  width: 40%;
+  height: 25%;
+  border: 0px solid #d6d6d6;
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
+  text-overflow: ellipsis;
 }
 
 /* swipe right button */
 #yes {
-  position: absolute; 
+  position: absolute;
   bottom: 5px;
   right: 20px;
-  width: 70px; 
-  border: 0px solid #d6d6d6; 
+  width: 40%;
+  height: 25%;
+  border: 0px solid #d6d6d6;
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
+  text-overflow: ellipsis;
 }
 
 /* signup page styling */
@@ -96,9 +105,8 @@
 }
 
 /* border for match image */
-.d-block{
-  border: 1px solid black; 
-  
+.d-block {
+  border: 1px solid black;
 }
 
 /* sidebar for match page */
@@ -136,12 +144,17 @@
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
 }
 .col-9 {
-position: relative;
-margin-top: -5;
+  position: relative;
+  overflow: auto;
+  margin-top: -5;
 }
 
 .signup2 {
@@ -172,20 +185,19 @@ margin-top: -5;
 /* navbar styling */
 .navbar-custom {
   background-color: #ececec;
-  
 }
 
-/* Modify brand and text color */ 
-          
-.navbar-custom .navbar-brand, 
-.navbar-custom .navbar-text { 
-    color: black; 
-} 
+/* Modify brand and text color */
 
-.navbar-custom .navbar-brand, 
-.navbar-custom .navbar-text { 
-    color: black; 
-} 
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: black;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: black;
+}
 
 /* log in/ styles sign up */
 form.signup,
@@ -193,8 +205,8 @@ form.login {
   margin-top: 50px;
 }
 
-.row {
-  margin: 15px;
+.dog-pic-row {
+  margin: 0.1rem;
 }
 
 body {
@@ -211,15 +223,20 @@ body {
   height: 375px;
   /* border: 1px solid #9C9C9C; */
   border-radius: 25px;
-  border: 2px solid #90CCF4;
+  border: 2px solid #90ccf4;
   padding: 20px;
   background: rgb(0, 175, 219);
   border-radius: 20px;
 }
 
-#login .container #login-row #login-column #login-box #login-form #register-link {
+#login
+  .container
+  #login-row
+  #login-column
+  #login-box
+  #login-form
+  #register-link {
   margin-top: -85px;
-  
 }
 
 .text-custom {
@@ -227,86 +244,134 @@ body {
   font-style: bold;
 }
 
-.remember-user{
-  color: #f1f1f1
-}
-
-h2{
-  color: #f1f1f1;
-}
-label{
+.remember-user {
   color: #f1f1f1;
 }
 
-.col-md-6{
+h2 {
+  color: #f1f1f1;
+}
+label {
+  color: #f1f1f1;
+}
+
+.col-md-6 {
   margin-left: 150px;
-  margin-right: 150px
+  margin-right: 150px;
 }
 
-p{
-  color: #f1f1f1
-}
-
-text{
+p {
   color: #f1f1f1;
-
-}
-#dogAge{
-  color: black
 }
 
-.signup1{
+text {
+  color: #f1f1f1;
+}
+#dogAge {
+  color: black;
+}
+
+.signup1 {
   border-radius: 25px;
-  border: 2px solid #90CCF4;
+  border: 2px solid #90ccf4;
   padding: 20px;
   background: rgb(0, 175, 219);
   border-radius: 20px;
-
 }
 
-.signup2{
+.signup2 {
   border-radius: 25px;
-  border: 2px solid #90CCF4;
+  border: 2px solid #90ccf4;
   padding: 20px;
   background: rgb(0, 175, 219);
   border-radius: 20px;
 }
 
 /* sign up page drop down items styling */
-#dogGender{
+#dogGender {
   color: black;
 }
 
-#dogFix{
+#dogFix {
   color: black;
 }
 
-#typeDate{
+#typeDate {
   color: black;
 }
 
-#genderHuman{
+#genderHuman {
   color: black;
 }
 
-#humanAge{
+#humanAge {
   color: black;
 }
-
 
 .update-form {
   margin-top: 30px;
   border-radius: 25px;
-  border: 2px solid #90CCF4;
+  border: 2px solid #90ccf4;
   padding: 20px;
   background: rgb(0, 175, 219);
   border-radius: 20px;
-  width:50%;
+  width: 50%;
   margin: auto;
   width: 50%;
   padding: 10px;
-  
 }
 
+/* @media screen and (min-width: 540px) {
+  .carousel-item {
+  height: 40px;
+  width: 40px
 
 
+} */
+
+/* .dog-image{
+  height: 100%;
+  width: 100%
+}
+}
+@media screen and (min-width: 720px) {
+  .carousel-item {
+    height: 100px;
+    width: 100px
+  
+  
+  }
+
+  .dog-image{
+    height: 100%;
+    width: 100%
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .carousel-item {
+    height: 200px;
+    width: 200px
+  
+  
+  }
+
+  .dog-image{
+    height: 100%;
+    width: 100%
+  }
+} */
+/* .carousel-item{
+  height: 400px;
+  width: 400px
+} */
+
+.dog-image {
+  height: 100%;
+  width: 100%;
+}
+
+#main-row{
+  height: 50vh;
+  overflow: auto;
+}
